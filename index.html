@@ -8,17 +8,51 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <!-- <link href="/style.css" rel="stylesheet" type="text/css" media="all"> -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
     <style> 
-    body.{
-      color: 
-      }
-    
+    .roboto-slab {
+      font-family: "Roboto Slab", serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    body{
+      background-color:#F4E0C4;
+      color: white;
+      font-family: "Roboto Slab", serif;
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), 
+      url(death-and-the-maiden.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1{
+      font-size: 42px;
+    }
+
+    h2{
+      font-size: 36px;
+    }
+
+    p{
+      font-size: 20px;
+    }
     </style>
-    </head>
+  </head>
     
-    <body>
+  <body>
     <h1>Hello World!!!</h1>
-
-
+    <h2>Art gallery</h2>
+    <p><i>I am so rich that I must give myself away. </i>   --Egon Schiele </p>
   </body>
 </html>

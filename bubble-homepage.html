@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homepage</title>
+<link href="css.css" rel="stylesheet" type="text/css" media="all"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== 预留：HEADING ===== -->
+<header class="site-header">
+  <div>
+    <h1 class="wordmark">ZiYi Liu</h1>
+    <p class="role">UX / UI Designer</p>
+  </div>
+  <nav class="site-nav" aria-label="主导航">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+
+<main class="stage" id="stage">
+  <!-- 底层装饰（JS 生成） -->
+  <div class="layer layer-bg" id="layerBg" aria-hidden="true"></div>
+
+  <!-- 中层：四个项目气泡 -->
+  <div class="layer layer-main">
+
+    <div class="slot" data-side="right"
+         style="--x:31%;--y:34%;--size:min(34vw,310px);--tint:var(--c-1);--drift-dur:19s;--morph-dur:15s;--delay:-2s;
+                --r-a:58% 42% 47% 53% / 52% 46% 54% 48%;
+                --r-b:47% 53% 61% 39% / 44% 58% 42% 56%;
+                --r-c:62% 38% 44% 56% / 57% 43% 57% 43%;">
+      <a class="bubble" href="#project-health">
+        <span class="bubble-shape"></span>
+        <span class="bubble-content">
+          <!-- 占位图标：换成你自己的 SVG 或 <img src="icon.svg"> -->
+          <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12h4l2-5 3 10 2-5h7"/>
+          </svg>
+          <span class="bubble-label">Health</span>
+        </span>
+      </a>
+      <figure class="preview">
+        <!-- 换成 <img src="health.jpg" alt="..."> 即可 -->
+        <span class="preview-frame">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Health 项目预览图占位">
+            <rect width="120" height="90" fill="rgb(233,186,60)"/>
+            <circle cx="42" cy="38" r="24" fill="rgba(255,255,255,.55)"/>
+            <path d="M0 68 Q30 52 60 66 T120 58 V90 H0Z" fill="rgba(19,17,16,.18)"/>
+          </svg>
+        </span>
+        <figcaption>睡眠追踪 App 的信息架构重做</figcaption>
+      </figure>
+    </div>
+
+    <div class="slot" data-side="left"
+         style="--x:66%;--y:29%;--size:min(40vw,330px);--tint:var(--c-2);--drift-dur:23s;--morph-dur:18s;--delay:-7s;
+                --r-a:52% 48% 39% 61% / 46% 55% 45% 54%;
+                --r-b:63% 37% 52% 48% / 58% 41% 59% 42%;
+                --r-c:44% 56% 58% 42% / 51% 47% 53% 49%;">
+      <a class="bubble" href="#project-game">
+        <span class="bubble-shape"></span>
+        <span class="bubble-content">
+          <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="11" rx="5.5"/>
+            <path d="M7 10v4M5 12h4M16 11.5h.01M18.5 14h.01"/>
+          </svg>
+          <span class="bubble-label">Game</span>
+        </span>
+      </a>
+      <figure class="preview">
+        <span class="preview-frame">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Game 项目预览图占位">
+            <rect width="120" height="90" fill="rgb(232,121,74)"/>
+            <rect x="18" y="24" width="84" height="42" rx="18" fill="rgba(255,255,255,.5)"/>
+            <circle cx="44" cy="45" r="7" fill="rgba(19,17,16,.35)"/>
+            <circle cx="78" cy="45" r="7" fill="rgba(19,17,16,.35)"/>
+          </svg>
+        </span>
+        <figcaption>独立游戏的新手引导流程设计</figcaption>
+      </figure>
+    </div>
+
+    <div class="slot" data-side="right"
+         style="--x:36%;--y:66%;--size:min(38vw,330px);--tint:var(--c-3);--drift-dur:21s;--morph-dur:16s;--delay:-11s;
+                --r-a:49% 51% 56% 44% / 57% 43% 57% 43%;
+                --r-b:60% 40% 43% 57% / 44% 59% 41% 56%;
+                --r-c:53% 47% 62% 38% / 50% 52% 48% 50%;">
+      <a class="bubble" href="#project-research">
+        <span class="bubble-shape"></span>
+        <span class="bubble-content">
+          <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5"/>
+            <path d="M15.4 15.4 21 21"/>
+          </svg>
+          <span class="bubble-label">Research</span>
+        </span>
+      </a>
+      <figure class="preview">
+        <span class="preview-frame">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Research 项目预览图占位">
+            <rect width="120" height="90" fill="rgb(201,74,74)"/>
+            <rect x="20" y="20" width="50" height="6" rx="3" fill="rgba(255,255,255,.7)"/>
+            <rect x="20" y="36" width="74" height="6" rx="3" fill="rgba(255,255,255,.5)"/>
+            <rect x="20" y="52" width="38" height="6" rx="3" fill="rgba(255,255,255,.5)"/>
+            <circle cx="88" cy="64" r="14" fill="rgba(19,17,16,.22)"/>
+          </svg>
+        </span>
+        <figcaption>12 位用户的日记研究与洞察综合</figcaption>
+      </figure>
+    </div>
+
+    <div class="slot" data-side="left"
+         style="--x:69%;--y:64%;--size:min(42vw,360px);--tint:var(--c-4);--drift-dur:25s;--morph-dur:20s;--delay:-16s;
+                --r-a:46% 54% 51% 49% / 55% 45% 55% 45%;
+                --r-b:57% 43% 60% 40% / 42% 57% 43% 58%;
+                --r-c:50% 50% 42% 58% / 59% 40% 60% 41%;">
+      <a class="bubble" href="#project-food">
+        <span class="bubble-shape"></span>
+        <span class="bubble-content">
+          <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 3v8a2.5 2.5 0 0 0 5 0V3M7.5 11V21"/>
+            <path d="M17 3c-1.6 1.4-2.4 3.4-2.4 5.5 0 1.7.9 2.8 2.4 3V21"/>
+          </svg>
+          <span class="bubble-label">Food</span>
+        </span>
+      </a>
+      <figure class="preview">
+        <span class="preview-frame">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Food 项目预览图占位">
+            <rect width="120" height="90" fill="rgb(111,197,220)"/>
+            <circle cx="60" cy="45" r="26" fill="rgba(255,255,255,.55)"/>
+            <circle cx="60" cy="45" r="13" fill="rgba(19,17,16,.25)"/>
+          </svg>
+        </span>
+        <figcaption>社区菜市场的线上订购体验</figcaption>
+      </figure>
+    </div>
+
+  </div>
+
+  <!-- 顶层装饰（JS 生成） -->
+  <div class="layer layer-top" id="layerTop" aria-hidden="true"></div>
+
+  <!-- 鼠标拖尾（独立层） -->
+  <div class="layer layer-cursor" id="layerCursor" aria-hidden="true"></div>
+</main>
+
+<!-- ===== 预留：CONTENTS ===== -->
+<section class="site-contents" id="contents">
+  <!-- 之后在这里加正文 / 项目列表 -->
+</section>
+
+<script src="bubble.js"></script>
+</body>
+</html>

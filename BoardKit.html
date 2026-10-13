@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects 1</title>
+<link href="css.css" rel="stylesheet" type="text/css" media="all">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Heading ===== -->
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Home">
+    <img class="brand-logo" src="logo.svg" alt="logo-image">
+    <div>
+      <p class="wordmark">Ziyi Liu</p>
+      <p class="role" data-i18n="role">UI/UX Designer</p>
+    </div>
+  </a>
+  <div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+    <span class="lang-thumb" aria-hidden="true"></span>
+    <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+    <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+  </div>
+  <nav class="site-nav" aria-label="Main">
+    <a href="allProject.html" data-i18n="nav.projects">All Projects</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+  </nav>
+</header>
+
+<!-- bg-bubbls -->
+<div class="page-deco" id="pageDeco" aria-hidden="true"></div>
+
+<div class="num-bubble num-float" id="floatBubble" aria-hidden="true">
+  <span class="bubble-shape"></span><span class="num">01</span>
+</div>
+
+<main class="project">
+
+  <!-- ===== Hero：01 ===== -->
+  <section class="hero step" data-step="01">
+    <h1 class="hero-title">
+      <span class="num-bubble" id="heroBubble" aria-hidden="true">
+        <span class="bubble-shape"></span><span class="num">01</span>
+      </span>
+      <span>Chossify - A Board Game Assistance</span>
+    </h1>
+    <ul class="tags">
+      <li>UI/UX</li>
+      <li>Branding</li>
+    </ul>
+    <p class="intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+  </section>
+</main>
+
+<!-- ===== Banner ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<div class="project">
+  <section class="step" id="timeline" data-step="01">
+    <header class="step-head">
+      <p>The project timeline covers the period from the initial concept to the development stage.</p>
+      <h2>Project Timeline 01</h2>
+    </header>
+    <div class="ph">image</div>
+  </section>
+
+  <section class="step" id="persona" data-step="02">
+    <header class="step-head">
+      <p>Who we designed for, and what they need.</p>
+      <h2>User Persona 02</h2>
+    </header>
+    <div class="ph">image</div>
+  </section>
+
+  <section class="step" id="survey" data-step="03">
+    <header class="step-head">
+      <p>What the survey told us about how people play.</p>
+      <h2>Survey 03</h2>
+    </header>
+    <div class="ph">image</div>
+  </section>
+
+  <section class="step" id="wireframe" data-step="04">
+    <header class="step-head">
+      <p>Early layouts and the flow between screens.</p>
+      <h2>Wireframe 04</h2>
+    </header>
+    <div class="ph">image</div>
+  </section>
+
+  <section class="step" id="prototype" data-step="05">
+    <header class="step-head">
+      <p>The final interactive prototype.</p>
+      <h2>Prototype 05</h2>
+    </header>
+    <div class="ph">image</div>
+  </section>
+</div>
+
+<script src="lang.js"></script>
+<script src="BoardKit.js"></script>
+</body>
+</html>

@@ -87,7 +87,6 @@ body{
   gap:1.5rem;
   padding:1.25rem clamp(1.25rem,4vw,3.5rem);
   background:transparent;     
-  pointer-events:none;
 }
 
 /* left：logo and name*/

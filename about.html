@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About</title>
+<link href="css.css" rel="stylesheet" type="text/css" media="all">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Heading ===== -->
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Home">
+    <img class="brand-logo" src="logo.svg" alt="logo-image">
+    <div>
+      <p class="wordmark">Ziyi Liu</p>
+      <p class="role" data-i18n="role">UI/UX Designer</p>
+    </div>
+  </a>
+
+   <!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+<!-- ===== right ===== -->
+  <nav class="site-nav" aria-label="Main">
+    <a href="ProjectsList.html" data-i18n="nav.projects">All Projects</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+  </nav>
+</header>
+
+<!-- bg-bubbles -->
+<div class="page-deco" id="pageDeco" aria-hidden="true"></div>
+
+<main>
+  <!-- ===== Hero：ZIYI LIU 图片在下层，头像在上层 ===== -->
+  <section class="about-hero project">
+    <div class="name-wrap">
+      <img class="name-art" src="ziyi-liu.png" alt="Ziyi Liu">
+      <!-- 把你的照片命名为 profile.png 放同目录；没有时只显示红色泡泡 -->
+      <div class="profile"><img src="MyProfile.png" alt="Portrait of Ziyi Liu" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
+
+  <section class="band band-flat">
+    <div class="project">
+      <h2 class="hi">Hi !</h2>
+      <p class="hi-text">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions. Replace this with your own introduction.</p>
+    </div>
+  </section>
+
+  <div class="project cv">
+    <section class="cv-block">
+      <h2>Education</h2>
+      <div class="cv-row"><span class="when">2024 - Present</span><div><b>University of Melbourne</b><small>User Experience design</small></div></div>
+    </section>
+
+    <div class="cv-cols cv-block">
+      <section>
+        <h2>Experience</h2>
+        <div class="cv-row"><span class="when">2025</span><div><b>Marketing Intern</b><small>Contact KOLs on social media</small></div></div>
+        <div class="cv-row"><span class="when">2024</span><div><b>Marketing Intern</b><small>Contact KOLs on social media</small></div></div>
+      </section>
+      <section>
+        <h2>Skills</h2>
+        <div class="skills">
+          <div>
+            <h3>Software Skills</h3>
+            <div class="skill"><span class="skill-ic">Fg</span><span class="dots" data-level="4"></span></div>
+            <div class="skill"><span class="skill-ic">Ai</span><span class="dots" data-level="3"></span></div>
+            <div class="skill"><span class="skill-ic">Ps</span><span class="dots" data-level="3"></span></div>
+          </div>
+          <div>
+            <h3>Coding Skill</h3>
+            <div class="skill"><span class="skill-ic">HTML</span><span class="dots" data-level="4"></span></div>
+            <div class="skill"><span class="skill-ic">CSS</span><span class="dots" data-level="3"></span></div>
+            <div class="skill"><span class="skill-ic">JS</span><span class="dots" data-level="3"></span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="cv-block">
+      <h2>Language</h2>
+      <div class="langs"><div><span>English</span><span>Fluent</span></div><div><span>Mandarin</span><span>Native</span></div></div>
+    </section>
+
+    <section class="cv-block hobbies">
+      <h2>Hobbies &amp; Interests</h2>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<!-- ===== CHANGED: 这里原来是 ProjectsList.js，改成 BoardKit.js（背景泡泡 / footer 都在里面） ===== -->
+<script src="lang.js"></script>
+<script src="BoardKit.js"></script>
+</body>
+</html>

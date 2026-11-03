@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* middle：language switch  ===== CHANGED: 整段重写 ===== */
+.lang-switch{
+  --lsw:4px;
+  position:relative;
+  isolation:isolate;
+  width:132px;
+  height:62px;
+  pointer-events:auto;       /* 修复 header 不可点击 */
+}
+
+/* 三类形状共用同一套位置和 morph 变形 */
+.lang-fill,
+.lang-outline,
+.goo-blob{
+  position:absolute;
+  top:1px;
+  height:calc(100% - 2px);
+  width:calc(50% - 2px);
+  animation:morph var(--morph-dur) ease-in-out var(--delay) infinite alternate;
+}
+
+/* EN / CN 各自的形状参数(同一对元素的参数必须一致,红球才能严丝合缝) */
+.is-en{
+  left:1px;
+  --r-a:58% 42% 47% 53% / 52% 46% 54% 48%;
+  --r-b:47% 53% 61% 39% / 44% 58% 42% 56%;
+  --r-c:62% 38% 44% 56% / 57% 43% 57% 43%;
+  --morph-dur:9s; --delay:-2s;
+}
+.is-cn{
+  left:calc(50% + 1px);
+  --r-a:46% 54% 51% 49% / 55% 45% 55% 45%;
+  --r-b:57% 43% 60% 40% / 42% 57% 43% 58%;
+  --r-c:50% 50% 42% 58% / 59% 40% 60% 41%;
+  --morph-dur:11s; --delay:-5s;
+}
+
+/* 底层:纸色填充 */
+.lang-fill{background:var(--paper);z-index:1;}
+
+/* 中层:红色 goo 融合层 */
+.lang-goo{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  filter:url(#langGoo);
+  pointer-events:none;
+}
+.goo-blob,
+.goo-center{background:var(--c-r);}
+
+/* 左圆:EN 时是 1,切到 CN 时缩成 0 */
+.goo-left{transform:scale(1);transition:transform .45s;}
+/* 右圆:EN 时是 0,切到 CN 时长出来 */
+.goo-right{transform:scale(0);transition:transform .45s;}
+/* 中间胶囊:从左滑到右,把两个圆"粘"在一起 */
+.goo-center{
+  position:absolute;
+  left:0; top:30%;
+  width:50%; height:40%;
+  border-radius:999px;
+  transition:transform .6s;
+}
+.lang-switch[data-lang="zh"] .goo-left  {transform:scale(0);}
+.lang-switch[data-lang="zh"] .goo-right {transform:scale(1);}
+.lang-switch[data-lang="zh"] .goo-center{transform:translateX(100%);}
+
+/* 上层:手绘粗边框(忽粗忽细) */
+.lang-outline{
+  z-index:3;
+  border:var(--lsw) solid var(--black);
+  pointer-events:none;
+  animation:
+    morph var(--morph-dur) ease-in-out var(--delay) infinite alternate,
+    langBrush calc(var(--morph-dur)*0.5) ease-in-out var(--delay) infinite alternate;
+}
+@keyframes langBrush{
+  0%  {border-width:3px 5px 4px 6px;}
+  50% {border-width:6px 3px 5px 3px;}
+  100%{border-width:4px 6px 3px 5px;}
+}
+
+/* 按钮:透明,只显示文字 */
+.lang-btn{
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  z-index:4;
+  border:0;background:none;cursor:pointer;
+  color:var(--black);
+  font:700 1rem var(--font-display);
+  border-radius:999px;
+  transition:color .25s ease .2s;   /* 等红球快到了再变色 */
+}
+.lang-btn[data-set-lang="en"]{left:0;}
+.lang-btn[data-set-lang="zh"]{left:50%;}
+.lang-btn[aria-pressed="true"]{color:#fff;}   /* 红球上的字是白色 */
+.lang-btn:focus-visible{outline:2px solid var(--black);outline-offset:2px;}
+  </style>
+</head>
+<body>
+  <!-- ===== CHANGED: 结构重写,多了 lang-fill / lang-goo / lang-outline 三层 ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- 底层:纸色填充的气泡 -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- 中层:红色融合层(左圆 / 中间胶囊 / 右圆),整层套 goo 滤镜 -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- 上层:黑色手绘粗边框(盖在红色上面,所以红色看起来在气泡里面) -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- 最顶层:按钮,只负责文字和点击(不变) -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== CHANGED: 新增 goo 滤镜,放在 </header> 之后或 <body> 开头都行 ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+<script src="lang.js"> </script>
+<script src="bubble.js"></script>
+</body>
+</html>

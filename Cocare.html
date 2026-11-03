@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BoardKit</title>
+<link href="css.css" rel="stylesheet" type="text/css" media="all">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Heading ===== -->
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Home">
+    <img class="brand-logo" src="logo.svg" alt="logo-image">
+    <div>
+      <p class="wordmark">Ziyi Liu</p>
+      <p class="role" data-i18n="role">UI/UX Designer</p>
+    </div>
+  </a>
+
+   <!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+<!-- ===== right ===== -->
+  <nav class="site-nav" aria-label="Main">
+    <a href="ProjectsList.html" data-i18n="nav.projects">All Projects</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+  </nav>
+</header>
+
+<!-- bg-bubbles -->
+<div class="page-deco" id="pageDeco" aria-hidden="true"></div>
+
+<!-- ===== CHANGED: left side nav, 由 JS 根据下面带 data-nav 的区块自动生成 ===== -->
+<nav class="side-nav" id="sideNav" aria-label="Page sections"></nav>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <div class="project">
+    <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+      <h1 class="hero-title">
+        <span class="num-bubble" data-num="02" aria-hidden="true"></span>
+        <span data-i18n="hero.title">BoardKit - A Board Game Assistant</span>
+      </h1>
+      <ul class="tags">
+        <li>UI/UX</li>
+        <li>User Research</li>
+        <li>Product Design</li>
+      </ul>
+      <p class="intro" data-i18n="hero.intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+    </section>
+  </div>
+
+  <!-- ===== Prototype showcase：灰色留给 video / 图片，换成 <video src=""> 或 <img src=""> 即可 ===== -->
+  <section class="band band-grey showcase" aria-label="Prototype showcase">
+  </section>
+
+  <div class="project">
+
+    <section class="step" id="user-research" data-nav="User Research" data-nav-key="sec.research" data-align="right">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.research">User Research</span></h2>
+      </header>
+      <div class="ph">image</div>
+    </section>
+
+    <section class="step" id="persona" data-nav="Persona" data-nav-key="sec.persona" data-align="left">
+      <header class="step-head">
+        <p>Who we designed for, and what they need.</p>
+        <h2><span data-i18n="sec.persona">Persona</span></h2>
+      </header>
+      <div class="persona-list">
+        <svg class="persona-path" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <defs><marker id="pArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>
+          <path d="M20 40 C-20 200 60 320 240 340 S 640 290 820 310 S 1010 420 940 570" marker-end="url(#pArrow)"/>
+        </svg>
+        <article class="persona">
+          <div class="avatar"><!-- <img src="images/derek.jpg" alt="Derek"> --></div>
+          <div>
+            <h3>Derek</h3>
+            <p>Derek spends most of his free time playing video games. A large portion of his friends have been made solely online, but he also plays board games with family.</p>
+            <div class="persona-cols">
+              <div><h4>Pains</h4><ul><li>Setting up pieces and the board takes time</li><li>Board games are easily bore due to their slower pace</li></ul></div>
+              <div><h4>Goals</h4><ul><li>Incentives to keep playing and remain loyal</li><li>Ways to increase the pace of play</li></ul></div>
+            </div>
+          </div>
+        </article>
+        <article class="persona">
+          <div class="avatar"><!-- <img src="images/alice.jpg" alt="Alice"> --></div>
+          <div>
+            <h3>Alice</h3>
+            <p>When not busy studying, Alice can be found out grabbing dinner or drinks with friends, always eager to get out.</p>
+            <div class="persona-cols">
+              <div><h4>Pains</h4><ul><li>Lacking social connections and time required for organisation</li><li>Tendency to zone out during gameplay</li></ul></div>
+              <div><h4>Goals</h4><ul><li>Ability to organise times for games</li><li>A way to keep track of gameplay</li></ul></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== Pain point：红色波浪色块（.band 自己是 .step，里面再套一个 .project 控制宽度） ===== -->
+  <section class="band band-red step" id="pain-point" data-nav="Pain Point" data-nav-key="sec.pain" data-align="right">
+    <div class="project">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.pain">Pain Point</span></h2>
+      </header>
+      <div class="pain-grid">
+        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project">
+    <section class="step" id="ux-architecture" data-nav="UX Architecture" data-nav-key="sec.ux" data-align="left">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.ux">UX Architecture</span></h2>
+      </header>
+      <div class="ph">image</div>
+    </section>
+
+    <section class="step" id="wireframe" data-nav="Wireframe" data-nav-key="sec.wire" data-align="right">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.wire">Wireframe</span></h2>
+      </header>
+      <div class="ph">image</div>
+    </section>
+  </div>
+</main>
+
+<!-- ===== Footer：Take me home / top / 项目跑马灯，全部由 JS 生成 ===== -->
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="lang.js"></script>
+<script src="BoardKit.js"></script>
+</body>
+</html>

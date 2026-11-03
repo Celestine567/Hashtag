@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects 1</title>
+<title>BoardKit</title>
 <link href="css.css" rel="stylesheet" type="text/css" media="all">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,88 +20,161 @@
       <p class="role" data-i18n="role">UI/UX Designer</p>
     </div>
   </a>
-  <div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
-    <span class="lang-thumb" aria-hidden="true"></span>
-    <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
-    <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
-  </div>
+
+   <!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+<!-- ===== right ===== -->
   <nav class="site-nav" aria-label="Main">
-    <a href="allProject.html" data-i18n="nav.projects">All Projects</a>
+    <a href="ProjectsList.html" data-i18n="nav.projects">All Projects</a>
     <a href="about.html" data-i18n="nav.about">About</a>
   </nav>
 </header>
 
-<!-- bg-bubbls -->
+<!-- bg-bubbles -->
 <div class="page-deco" id="pageDeco" aria-hidden="true"></div>
 
-<div class="num-bubble num-float" id="floatBubble" aria-hidden="true">
-  <span class="bubble-shape"></span><span class="num">01</span>
-</div>
+<!-- ===== CHANGED: left side nav, 由 JS 根据下面带 data-nav 的区块自动生成 ===== -->
+<nav class="side-nav" id="sideNav" aria-label="Page sections"></nav>
 
-<main class="project">
+<main>
+  <!-- ===== Hero ===== -->
+  <div class="project">
+    <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+      <h1 class="hero-title">
+        <span class="num-bubble" data-num="02" aria-hidden="true"></span>
+        <span data-i18n="hero.title">BoardKit - A Board Game Assistant</span>
+      </h1>
+      <ul class="tags">
+        <li>UI/UX</li>
+        <li>User Research</li>
+        <li>Product Design</li>
+      </ul>
+      <p class="intro" data-i18n="hero.intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+    </section>
+  </div>
 
-  <!-- ===== Hero：01 ===== -->
-  <section class="hero step" data-step="01">
-    <h1 class="hero-title">
-      <span class="num-bubble" id="heroBubble" aria-hidden="true">
-        <span class="bubble-shape"></span><span class="num">01</span>
-      </span>
-      <span>Chossify - A Board Game Assistance</span>
-    </h1>
-    <ul class="tags">
-      <li>UI/UX</li>
-      <li>Branding</li>
-    </ul>
-    <p class="intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+  <!-- ===== Prototype showcase：灰色留给 video / 图片，换成 <video src=""> 或 <img src=""> 即可 ===== -->
+  <section class="band band-grey showcase" aria-label="Prototype showcase">
   </section>
+
+  <!-- ===================================================================
+       模板说明：每个 .step 就是一个章节
+         data-nav       左侧导航显示的名字
+         data-nav-key   (可选) 中英文切换用的 key
+         data-align     标题靠 right / left
+       编号 01 02 03… 和左侧导航都是 JS 按顺序自动生成，增删章节不用手动改号
+       ================================================================== -->
+  <div class="project">
+
+    <section class="step" id="user-research" data-nav="User Research" data-nav-key="sec.research" data-align="right">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.research">User Research</span></h2>
+      </header>
+      <div class="ph">image</div>
+    </section>
+
+    <section class="step" id="persona" data-nav="Persona" data-nav-key="sec.persona" data-align="left">
+      <header class="step-head">
+        <p>Who we designed for, and what they need.</p>
+        <h2><span data-i18n="sec.persona">Persona</span></h2>
+      </header>
+      <div class="persona-list">
+        <svg class="persona-path" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <defs><marker id="pArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>
+          <path d="M20 40 C-20 200 60 320 240 340 S 640 290 820 310 S 1010 420 940 570" marker-end="url(#pArrow)"/>
+        </svg>
+        <article class="persona">
+          <div class="avatar"><!-- <img src="images/derek.jpg" alt="Derek"> --></div>
+          <div>
+            <h3>Derek</h3>
+            <p>Derek spends most of his free time playing video games. A large portion of his friends have been made solely online, but he also plays board games with family.</p>
+            <div class="persona-cols">
+              <div><h4>Pains</h4><ul><li>Setting up pieces and the board takes time</li><li>Board games are easily bore due to their slower pace</li></ul></div>
+              <div><h4>Goals</h4><ul><li>Incentives to keep playing and remain loyal</li><li>Ways to increase the pace of play</li></ul></div>
+            </div>
+          </div>
+        </article>
+        <article class="persona">
+          <div class="avatar"><!-- <img src="images/alice.jpg" alt="Alice"> --></div>
+          <div>
+            <h3>Alice</h3>
+            <p>When not busy studying, Alice can be found out grabbing dinner or drinks with friends, always eager to get out.</p>
+            <div class="persona-cols">
+              <div><h4>Pains</h4><ul><li>Lacking social connections and time required for organisation</li><li>Tendency to zone out during gameplay</li></ul></div>
+              <div><h4>Goals</h4><ul><li>Ability to organise times for games</li><li>A way to keep track of gameplay</li></ul></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== Pain point：红色波浪色块（.band 自己是 .step，里面再套一个 .project 控制宽度） ===== -->
+  <section class="band band-red step" id="pain-point" data-nav="Pain Point" data-nav-key="sec.pain" data-align="right">
+    <div class="project">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.pain">Pain Point</span></h2>
+      </header>
+      <div class="pain-grid">
+        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project">
+    <section class="step" id="ux-architecture" data-nav="UX Architecture" data-nav-key="sec.ux" data-align="left">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.ux">UX Architecture</span></h2>
+      </header>
+      <div class="ph">image</div>
+    </section>
+
+    <section class="step" id="wireframe" data-nav="Wireframe" data-nav-key="sec.wire" data-align="right">
+      <header class="step-head">
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.wire">Wireframe</span></h2>
+      </header>
+      <div class="ph">image</div>
+    </section>
+  </div>
 </main>
 
-<!-- ===== Banner ===== -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack"></div>
-</div>
-
-<div class="project">
-  <section class="step" id="timeline" data-step="01">
-    <header class="step-head">
-      <p>The project timeline covers the period from the initial concept to the development stage.</p>
-      <h2>Project Timeline 01</h2>
-    </header>
-    <div class="ph">image</div>
-  </section>
-
-  <section class="step" id="persona" data-step="02">
-    <header class="step-head">
-      <p>Who we designed for, and what they need.</p>
-      <h2>User Persona 02</h2>
-    </header>
-    <div class="ph">image</div>
-  </section>
-
-  <section class="step" id="survey" data-step="03">
-    <header class="step-head">
-      <p>What the survey told us about how people play.</p>
-      <h2>Survey 03</h2>
-    </header>
-    <div class="ph">image</div>
-  </section>
-
-  <section class="step" id="wireframe" data-step="04">
-    <header class="step-head">
-      <p>Early layouts and the flow between screens.</p>
-      <h2>Wireframe 04</h2>
-    </header>
-    <div class="ph">image</div>
-  </section>
-
-  <section class="step" id="prototype" data-step="05">
-    <header class="step-head">
-      <p>The final interactive prototype.</p>
-      <h2>Prototype 05</h2>
-    </header>
-    <div class="ph">image</div>
-  </section>
-</div>
+<!-- ===== Footer：Take me home / top / 项目跑马灯，全部由 JS 生成 ===== -->
+<footer class="site-footer" id="siteFooter"></footer>
 
 <script src="lang.js"></script>
 <script src="BoardKit.js"></script>

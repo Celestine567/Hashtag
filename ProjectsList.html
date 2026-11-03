@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Projects</title>
+<link href="css.css" rel="stylesheet" type="text/css" media="all"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- ===== Heading===== -->
+<header class="site-header">  
+
+<!-- left -->
+  <a class="brand" href="index.html" aria-label="Home">
+    <img class="brand-logo" src="logo.svg" alt="logo-image">
+    <div>
+      <p class="wordmark">Ziyi Liu</p>
+      <p class="role" data-i18n="role">UI/UX Designer</p>
+    </div>
+  </a>
+
+<!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+  <!-- right -->
+  <nav class="site-nav" aria-label="Main">
+    <a href="ProjectsList.html" data-i18n="nav.projects">All Projects</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+  </nav>
+</header>
+
+
+<!-- ===== bg bubbles ===== -->
+<div class="page-deco" id="pageDeco" aria-hidden="true"></div>
+
+<main class="projects-page">
+  <h1 class="visually-hidden">All Projects</h1>
+
+  <!-- Left:list -->
+  <ul class="project-list" id="projectList">
+
+    <li class="project-item">
+      <a class="project-link" href="BoardKit.html">
+        <div class="project-top">
+          <h2 class="project-title"><span class="project-num">01</span>Cocare</h2>
+          <ul class="tags"><li>UI/UX</li><li>User Research</li><li>Product Design</li></ul>
+        </div>
+        <p class="project-desc">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+      </a>
+      <svg class="project-line" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path d=""/></svg>
+    </li>
+
+    <li class="project-item">
+      <a class="project-link" href="#">
+        <div class="project-top">
+          <h2 class="project-title"><span class="project-num">02</span>BoardKit</h2>
+          <ul class="tags"><li>UI/UX</li><li>User Research</li><li>Branding</li></ul>
+        </div>
+        <p class="project-desc">Short description of the second project.</p>
+      </a>
+      <svg class="project-line" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path d=""/></svg>
+    </li>
+
+    <li class="project-item">
+      <a class="project-link" href="#">
+        <div class="project-top">
+          <h2 class="project-title"><span class="project-num">03</span>Nourish Redesign</h2>
+          <ul class="tags"><li>UI/UX</li><li>User Research</li></ul>
+        </div>
+        <p class="project-desc">Short description of the second project.</p>
+      </a>
+      <svg class="project-line" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path d=""/></svg>
+    </li>
+
+    <li class="project-item">
+      <a class="project-link" href="#">
+        <div class="project-top">
+          <h2 class="project-title"><span class="project-num">04</span>Portfolio   </h2>
+          <ul class="tags"><li>UI/UX</li><li>Wensite Design</li><li>User Research</li></ul>
+        </div>
+        <p class="project-desc">Short description of the second project.</p>
+      </a>
+      <svg class="project-line" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path d=""/></svg>
+    </li>
+
+   
+  </ul>
+
+  <!-- 右：预览图，顺序要和左边的项目一一对应 -->
+  <div class="project-preview" aria-hidden="true">
+    <figure class="preview-slide is-active">
+      <!-- 换成图片：<img src="images/boardkit.jpg" alt=""> -->
+      <span class="preview-placeholder">BoardKit image</span>
+    </figure>
+    <figure class="preview-slide">
+      <span class="preview-placeholder">Project Two image</span>
+    </figure>
+  </div>
+</main>
+
+  <script src="lang.js"></script>
+  <script src="ProjectsList.js"></script>   
+  </body>
+</html>

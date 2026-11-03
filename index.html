@@ -7,7 +7,7 @@
 <link href="css.css" rel="stylesheet" type="text/css" media="all"> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,13 +20,41 @@
       <p class="role" data-i18n="role">UI/UX Designer</p>
     </div>
   </a>
-  <div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
-    <span class="lang-thumb" aria-hidden="true"></span>
-    <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
-    <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
-  </div>
+
+  <!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+<!-- ===== right ===== -->
   <nav class="site-nav" aria-label="Main">
-    <a href="allProject.html" data-i18n="nav.projects">All Projects</a>
+    <a href="ProjectsList.html" data-i18n="nav.projects">All Projects</a>
     <a href="about.html" data-i18n="nav.about">About</a>
   </nav>
 </header>
@@ -39,7 +67,7 @@
   <div class="layer layer-main">
 
     <div class="slot" data-side="right"
-         style="--x:31%;--y:34%;--size:min(34vw,310px);--tint:var(--c-y);--drift-dur:19s;--morph-dur:15s;--delay:-2s;
+         style="--x:31%;--y:40%;--size:min(34vw,310px);--tint:var(--c-y);--drift-dur:19s;--morph-dur:15s;--delay:-2s;
                 --r-a:58% 42% 47% 53% / 52% 46% 54% 48%;
                 --r-b:47% 53% 61% 39% / 44% 58% 42% 56%;
                 --r-c:62% 38% 44% 56% / 57% 43% 57% 43%;">
@@ -59,7 +87,7 @@
     </div>
 
     <div class="slot" data-side="left"
-         style="--x:66%;--y:29%;--size:min(40vw,330px);--tint:var(--c-o);--drift-dur:23s;--morph-dur:18s;--delay:-7s;
+         style="--x:66%;--y:35%;--size:min(40vw,330px);--tint:var(--c-o);--drift-dur:23s;--morph-dur:18s;--delay:-7s;
                 --r-a:52% 48% 39% 61% / 46% 55% 45% 54%;
                 --r-b:63% 37% 52% 48% / 58% 41% 59% 42%;
                 --r-c:44% 56% 58% 42% / 51% 47% 53% 49%;">
@@ -80,7 +108,7 @@
     </div>
 
     <div class="slot" data-side="right"
-         style="--x:36%;--y:66%;--size:min(38vw,330px);--tint:var(--c-r);--drift-dur:21s;--morph-dur:16s;--delay:-11s;
+         style="--x:36%;--y:72%;--size:min(38vw,330px);--tint:var(--c-r);--drift-dur:21s;--morph-dur:16s;--delay:-11s;
                 --r-a:49% 51% 56% 44% / 57% 43% 57% 43%;
                 --r-b:60% 40% 43% 57% / 44% 59% 41% 56%;
                 --r-c:53% 47% 62% 38% / 50% 52% 48% 50%;">
@@ -102,7 +130,7 @@
     </div>
 
     <div class="slot" data-side="left"
-         style="--x:69%;--y:64%;--size:min(42vw,360px);--tint:var(--c-b);--drift-dur:25s;--morph-dur:20s;--delay:-16s;
+         style="--x:69%;--y:70%;--size:min(42vw,360px);--tint:var(--c-b);--drift-dur:25s;--morph-dur:20s;--delay:-16s;
                 --r-a:46% 54% 51% 49% / 55% 45% 55% 45%;
                 --r-b:57% 43% 60% 40% / 42% 57% 43% 58%;
                 --r-c:50% 50% 42% 58% / 59% 40% 60% 41%;">

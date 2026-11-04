@@ -425,47 +425,72 @@ body{
 .bubble:focus-visible{outline:2px solid var(--black);outline-offset:8px;border-radius:40%;}
 
 /* ---------- hover preview ---------- */
-.preview{
-  position:absolute;
+/* ---------- 放大倍数只改这里 ---------- */
+:root{ 
+  --grow:1.05; 
+}        
+.slot{
+  transition:
+    width  .5s cubic-bezier(.2,.8,.3,1),
+    height .5s cubic-bezier(.2,.8,.3,1),
+    margin .5s cubic-bezier(.2,.8,.3,1);
+}
+.slot.is-open,
+.slot:has(:focus-visible){
+  width:calc(var(--size) * var(--grow));
+  height:calc(var(--size) * var(--grow));
+  margin-left:calc(var(--size) * var(--grow) / -2);
+  margin-top:calc(var(--size) * var(--grow) / -2);
   z-index:5;
-  margin:0;
-  width:clamp(140px,15vw,220px);
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(10px) scale(0.94);
-  transition:opacity .32s ease, transform .38s cubic-bezier(.2,.8,.3,1), visibility 0s linear .38s;
-  pointer-events:none;
 }
-.slot[data-side="right"] .preview{left:calc(100% + 0.75rem);top:6%;}
-.slot[data-side="left"]  .preview{right:calc(100% + 0.75rem);top:6%;}
-.slot:hover .preview,
-.slot:focus-within .preview{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0) scale(1);
-  transition:opacity .32s ease, transform .38s cubic-bezier(.2,.8,.3,1), visibility 0s;
+@media (hover:hover){
+  .slot:hover{
+    width:calc(var(--size) * var(--grow));
+    height:calc(var(--size) * var(--grow));
+    margin-left:calc(var(--size) * var(--grow) / -2);
+    margin-top:calc(var(--size) * var(--grow) / -2);
+    z-index:5;
+  }
 }
+
+.preview{
+  position:absolute; inset:0; margin:0;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .35s ease, visibility 0s linear .35s;
+}
+.slot.is-open .preview,
+.slot:has(:focus-visible) .preview{
+  opacity:1; visibility:visible;
+  transition:opacity .35s ease, visibility 0s;
+}
+@media (hover:hover){
+  .slot:hover .preview{
+    opacity:1; visibility:visible;
+    transition:opacity .35s ease, visibility 0s;
+  }
+}
+
+/* 图片框：和 bubble-shape 用同一组 morph / drift 参数，所以形状和位置会同步 */
+/* 图片框：没有边框，放在 bubble 下面，由 bubble 原本的边框盖住它的边缘 */
 .preview-frame{
-  width:100%;
-  aspect-ratio:4 / 3;
-  border:2px solid #111;
-  border-radius:14px;
+  position:absolute; inset:2px; display:block;      /* 缩进 2px，避免边缘露出来 */
+  border:0;
+  border-radius:var(--r-a);
+  background:var(--tint);
   overflow:hidden;
-  background:var(--paper);
-  display:block;
+  animation:
+    morph     var(--morph-dur) ease-in-out var(--delay) infinite alternate,
+    slotDrift var(--drift-dur) ease-in-out var(--delay) infinite alternate;
 }
 .preview-frame img,
-.preview-frame svg{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+.preview-frame svg{ width:100%; height:100%; object-fit:cover; display:block; }
+
 .preview figcaption{
-  margin-top:0.45rem;
-  font-size:0.75rem;
-  color:var(--grey1);
-  line-height:1.35;
+  position:absolute; left:50%; bottom:12%; transform:translateX(-50%);
+  padding:.25rem .9rem;
+  background:var(--paper); color:#111;
+  border:2px solid #111; border-radius:999px;
+  font-weight:var(--font-weight7); font-size:.85rem; white-space:nowrap;
 }
 
 /* ============================================================
@@ -501,12 +526,10 @@ body{
 
 @media (max-width:720px){
   .stage{min-height:78svh;margin-top:0;}
-  .preview{width:120px;}
-  .slot[data-side="right"] .preview{left:auto;right:calc(100% + .5rem);}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .deco,.deco::before,.bubble,.bubble-shape,.trail{animation:none !important;}
+  .deco,.deco::before,.bubble,.bubble-shape,.preview-frame,.trail{animation:none !important;}
   .preview,.bubble-shape,.bubble-icon{transition:none !important;}
 }
 
@@ -1230,3 +1253,126 @@ html{scroll-behavior:smooth;}
 @media (max-width:720px){
   .cv-cols,.skills{grid-template-columns:1fr;}
   .cv-row{padding-left:0;grid-template-columns:6rem 1fr;}}
+
+/* ============================================================
+   Header — mobile responsiveness (hamburger menu)
+   ============================================================ */
+.nav-toggle{ display:none; }                 /* 电脑端不显示按钮 */
+
+@media (max-width:720px){
+  :root{ --header-h:5rem; }
+
+  .site-header{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;      /* 左右等宽 → 中间的 EN/CN 永远居中 */
+    align-items:center;
+    gap:.75rem;
+    padding:.75rem 1.25rem;
+  }
+  .brand{ grid-column:1; gap:.6rem; }
+  .brand-logo{ width:44px; height:44px; }
+  .role{ display:none; }
+  .lang-switch{ grid-column:2; }
+
+  /* ----- 三条横按钮 ----- */
+  .nav-toggle{
+    grid-column:3; justify-self:end;
+    display:grid; place-content:center; gap:5px;
+    width:44px; height:44px; padding:0;
+    background:transparent; color:var(--black);
+    border:3px solid var(--black);
+    border-radius:55% 45% 48% 52% / 62% 54% 46% 38%;
+    cursor:pointer;
+  }
+  .nav-toggle span{
+    display:block; width:20px; height:3px; border-radius:2px;
+    background:currentColor;
+    transition:transform .25s, opacity .2s;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+  .nav-toggle:focus-visible{ outline:2px solid var(--black); outline-offset:3px; }
+
+  /* ----- 点开后出现的列表 ----- */
+  .site-nav{
+    position:absolute;
+    top:calc(100% + .25rem);
+    right:1.25rem;
+    display:none;                            /* 默认隐藏 */
+    flex-direction:column;
+    gap:.2rem;
+    min-width:11rem;
+    padding:.8rem 1.4rem;
+    background:var(--paper);
+    border:3px solid var(--black);
+    border-radius:28px 36px 30px 34px / 34px 28px 36px 30px;
+  }
+  .site-nav.is-open{ display:flex; }
+  .site-nav a{ font-size:1.1rem; padding:.5rem 0; }
+}
+
+/* 小手机：只留 logo，名字隐藏（logo 链接本身有 aria-label="Home"） */
+@media (max-width:480px){
+  .brand > div{ display:none; }
+}
+
+@media (max-width:360px){
+  .site-header{ padding:.75rem 1rem; gap:.5rem; }
+  .brand-logo{ width:40px; height:40px; }
+  .site-nav{ right:1rem; }
+}
+
+/* ============================================================
+   Home — mobile bubbles（电脑端不受影响）
+   ============================================================ */
+@media (max-width:720px){
+  /* 页面变高，bubble 可以分布到下方 */
+  .stage{ min-height:220vw; }
+
+  /* 4 个主 bubble 变大，并错开分布（用 !important 才能盖过 index.html 里的行内 style） */
+  .layer-main .slot{ --size:48vw !important; }
+  .layer-main .slot:nth-child(1){ --x:39% !important; --y:18% !important; }
+  .layer-main .slot:nth-child(2){ --x:61% !important; --y:39% !important; }
+  .layer-main .slot:nth-child(3){ --x:39% !important; --y:60% !important; }
+  .layer-main .slot:nth-child(4){ --x:61% !important; --y:81% !important; }
+
+  /* 更细的边框，粗细仍然缓慢变化（比桌面端周期长一点） */
+  .slot .bubble-shape{
+    animation:
+      morph var(--morph-dur) ease-in-out var(--delay) infinite alternate,
+      slimTop    calc(var(--morph-dur)*0.9)  ease-in-out var(--delay) infinite alternate,
+      slimRight  calc(var(--morph-dur)*1.1)  ease-in-out calc(var(--delay) - 1.4s) infinite alternate,
+      slimBottom calc(var(--morph-dur)*1.0)  ease-in-out calc(var(--delay) - 2.6s) infinite alternate,
+      slimLeft   calc(var(--morph-dur)*1.25) ease-in-out calc(var(--delay) - 0.7s) infinite alternate;
+  }
+  .preview-frame{ border-width:3px; }
+
+  @keyframes slimTop   {0%{border-top-width:1.5px;}   50%{border-top-width:3.5px;}   100%{border-top-width:2px;}}
+  @keyframes slimRight {0%{border-right-width:3px;}   50%{border-right-width:1.5px;} 100%{border-right-width:3.5px;}}
+  @keyframes slimBottom{0%{border-bottom-width:2px;}  60%{border-bottom-width:3.5px;}100%{border-bottom-width:2.5px;}}
+  @keyframes slimLeft  {0%{border-left-width:3.5px;}  40%{border-left-width:1.5px;}  100%{border-left-width:3px;}}
+}
+
+/* ============================================================
+   图片块：上下边缘波浪（不规则）
+   ============================================================ */
+:root{
+  --wave-h:clamp(36px,7vw,100px);
+  /* 上边缘：波浪线以下保留 */
+  --wave-keep-top:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V30C260 100 520 90 760 45C1000 0 1180 100 1440 40V100Z'/%3E%3C/svg%3E");
+  /* 下边缘：波浪线以上保留 */
+  --wave-keep-bottom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0V70C260 0 520 10 760 55C1000 100 1180 0 1440 60V0Z'/%3E%3C/svg%3E");
+}
+.ph{
+  -webkit-mask:
+    var(--wave-keep-top)    top    / 100% var(--wave-h) no-repeat,
+    linear-gradient(#000,#000) 0 calc(var(--wave-h) - 1px) / 100% calc(100% - 2 * var(--wave-h) + 2px) no-repeat,
+    var(--wave-keep-bottom) bottom / 100% var(--wave-h) no-repeat;
+          mask:
+    var(--wave-keep-top)    top    / 100% var(--wave-h) no-repeat,
+    linear-gradient(#000,#000) 0 calc(var(--wave-h) - 1px) / 100% calc(100% - 2 * var(--wave-h) + 2px) no-repeat,
+    var(--wave-keep-bottom) bottom / 100% var(--wave-h) no-repeat;
+}
+/* 以后放真实图片/视频：<div class="ph"><img src="..."></div> */
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;display:block;}

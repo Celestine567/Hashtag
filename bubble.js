@@ -1,11 +1,28 @@
 var PROJECT_PAGES_READY = false; //true
 
-document.querySelectorAll(".bubble").forEach(function(link){
-  link.addEventListener("click", function(e){
-    if(!PROJECT_PAGES_READY) e.preventDefault();
-    this.blur(); // close hover/focus preview
+(function(){
+  var touch = window.matchMedia("(hover: none)").matches;
+  var slots = document.querySelectorAll(".slot");
+  function closeAll(){ slots.forEach(function(s){ s.classList.remove("is-open"); }); }
+
+  slots.forEach(function(slot){
+    slot.querySelector(".bubble").addEventListener("click", function(e){
+      // 手机：第一次点击只展开 bubble 看图片，再点一次才跳转
+      if(touch && !slot.classList.contains("is-open")){
+        e.preventDefault();
+        closeAll();
+        slot.classList.add("is-open");
+        return;
+      }
+      if(!PROJECT_PAGES_READY) e.preventDefault();
+      this.blur();
+    });
   });
-});
+  // 点空白处收起
+  document.addEventListener("click", function(e){
+    if(!e.target.closest(".slot")) closeAll();
+  });
+})();
 
 (function(){
   "use strict";
@@ -79,8 +96,8 @@ document.querySelectorAll(".bubble").forEach(function(link){
     layerTop.innerHTML = "";
     var wide = window.innerWidth > 720;
 
-    var bgCount  = wide ? 90 : 30;   // bottom layer：mixed
-    var topCount = wide ? 30 : 15;   // top layer: small bubbles
+    var bgCount  = wide ? 90 : 12;   // bottom layer：mixed
+    var topCount = wide ? 30 : 6;   // top layer: small bubbles
 
     var i;
     for(i = 0; i < bgCount; i++){

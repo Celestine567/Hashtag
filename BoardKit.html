@@ -14,7 +14,7 @@
 <!-- ===== Heading ===== -->
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="Home">
-    <img class="brand-logo" src="logo.svg" alt="logo-image">
+    <img class="brand-logo" src="Assets/logo.svg" alt="logo-image">
     <div>
       <p class="wordmark">Ziyi Liu</p>
       <p class="role" data-i18n="role">UI/UX Designer</p>
@@ -86,13 +86,6 @@
   <section class="band band-grey showcase" aria-label="Prototype showcase">
   </section>
 
-  <!-- ===================================================================
-       模板说明：每个 .step 就是一个章节
-         data-nav       左侧导航显示的名字
-         data-nav-key   (可选) 中英文切换用的 key
-         data-align     标题靠 right / left
-       编号 01 02 03… 和左侧导航都是 JS 按顺序自动生成，增删章节不用手动改号
-       ================================================================== -->
   <div class="project">
 
     <section class="step" id="user-research" data-nav="User Research" data-nav-key="sec.research" data-align="right">
@@ -100,7 +93,8 @@
         <p>The project timeline covers the period from the initial concept to the development stage.</p>
         <h2><span data-i18n="sec.research">User Research</span></h2>
       </header>
-      <div class="ph">image</div>
+      <div class="ph ph-flat">
+        <img src="Assets/Frame 1.png" alt="User Research"></div>
     </section>
 
     <section class="step" id="persona" data-nav="Persona" data-nav-key="sec.persona" data-align="left">
@@ -147,9 +141,9 @@
         <h2><span data-i18n="sec.pain">Pain Point</span></h2>
       </header>
       <div class="pain-grid">
-        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
-        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
-        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
+        <div class="blob"><ul><li>Board Game Player Complexity and Preferences</li><li>Video Game</li><li>Casual Board Game</li><li>Social-oriented players</li></ul></div>
+        <div class="blob"><ul><li>面对面游戏的设置与组织困难</li><li> “现在很难约到人一起玩。” —— 参与者 7</li></ul></div>
+        <div class="blob"><ul><li>现有辅助应用界面混乱或操作笨拙</li></ul></div>
       </div>
     </div>
   </section>
@@ -168,12 +162,14 @@
         <p>The project timeline covers the period from the initial concept to the development stage.</p>
         <h2><span data-i18n="sec.wire">Wireframe</span></h2>
       </header>
-      <div class="ph">image</div>
+      <div class="ph ph-flat">
+        <img src="Assets/wireframe-boardkit.png" alt="wireframe-boardkit">
+      </div>
     </section>
   </div>
 </main>
 
-<!-- ===== Footer：Take me home / top / 项目跑马灯，全部由 JS 生成 ===== -->
+<!-- ===== Footer ===== -->
 <footer class="site-footer" id="siteFooter"></footer>
 
 <script src="lang.js"></script>

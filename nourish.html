@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nourish</title>
+<link href="css.css" rel="stylesheet" type="text/css" media="all">
+<link href="Nourish.css" rel="stylesheet" type="text/css" media="all">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Heading ===== -->
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Home">
+    <img class="brand-logo" src="Assets/logo.svg" alt="logo-image">
+    <div>
+      <p class="wordmark">Ziyi Liu</p>
+      <p class="role" data-i18n="role">UI/UX Designer</p>
+    </div>
+  </a>
+
+   <!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix"
+      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+  </filter>
+</svg>
+
+<!-- ===== right ===== -->
+  <nav class="site-nav" aria-label="Main">
+    <a href="ProjectsList.html" data-i18n="nav.projects">All Projects</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+  </nav>
+</header>
+
+<!-- bg-bubbles -->
+<div class="page-deco" id="pageDeco" aria-hidden="true"></div>
+
+<!-- 左侧导航：由 BoardKit.js 根据带 data-nav 的区块自动生成 -->
+<nav class="side-nav" id="sideNav" aria-label="Page sections"></nav>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <div class="project">
+    <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+      <h1 class="hero-title">
+        <span class="num-bubble" data-num="03" aria-hidden="true"></span>
+        <span data-i18n="nr.title">Nourish - Website Redesign</span>
+      </h1>
+      <ul class="tags">
+        <li>UI/UX</li>
+        <li>Branding</li>
+      </ul>
+      <p class="intro" data-i18n="nr.intro">This redesign aims to improve the Nourish website by addressing the usability issues identified in the UI Analysis Report, while maintaining its luxurious and minimalist brand identity.</p>
+      <div class="key">
+        <h3 data-i18n="nr.key">Key Improvements</h3>
+        <ol>
+          <li data-i18n="nr.k1">Navigation: Introduce a fixed header for easier navigation.</li>
+          <li data-i18n="nr.k2">Visual Hierarchy: Establish a consistent typography and colour system.</li>
+          <li data-i18n="nr.k3">Website Architecture: Improve the content structure and interaction flow, making key features easier to find.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+
+  <div class="project">
+
+    <!-- ===================================================================
+         Redesigned Wireframe
+         每个 .wf-grid 是 12 列的网格，--rows 是它的总行数。
+         每个元素用 style 控制位置：
+           --c:5/9   占第 5~8 列（写 起/止，止不包含）
+           --r:3     从第 3 行开始（图片用 2/7 表示占第 2~6 行）
+           --ar:.5   手机端堆叠时的宽高比（桌面端由列×行决定）
+         ================================================================== -->
+    <section class="step" id="wireframe" data-nav="Redesigned Wireframe" data-nav-key="nr.wire" data-align="right">
+      <header class="step-head">
+        <h2><span data-i18n="nr.wire">Redesigned Wireframe</span></h2>
+      </header>
+
+      <div class="wf">
+      <div class="wf-grid" style="--rows:17">
+        <h3 class="wf-title" style="--c:5/9;--r:1">Homepage</h3>
+        <div class="wf-img" data-label="Homepage - desktop" style="--c:1/5;--r:1/17;--ar:.46">
+          <img src="Assets/Homepage-Desktop.png" alt="Homepage-Desktop-nourish">
+        </div>
+        <div class="wf-note" style="--c:5/8;--r:3"><h4>Intro Animation</h4><p>Making the transition more smoother.</p></div>
+        <div class="wf-note" style="--c:5/8;--r:7"><h4>Responsive Design</h4><p>More images shows in desktop</p></div>
+        <div class="wf-img is-phone" data-label="Homepage - mobile 1" style="--c:8/11;--r:7/13;--ar:.5">
+          <img src="Assets/homepage1-mobile.png" alt="homepage1-mobile-nourish">
+        </div>
+        <div class="wf-img is-phone" data-label="Homepage - mobile 2" style="--c:11/13;--r:5/14;--ar:.45">
+          <img src="Assets/homepage2-mobile.png" alt="homepage2-mobile-nourish">
+        </div>
+        <div class="wf-note" style="--c:6/9;--r:13"><h4>Crawling text</h4><p>It is not overly obvious, keeping the button remains visually prominent</p></div>
+      </div>
+      </div>
+      <div class="wf">
+      <div class="wf-grid" style="--rows:13">
+        <h3 class="wf-title" style="--c:1/6;--r:1">Product List</h3>
+        <div class="wf-img" data-label="Product list - desktop 1" style="--c:1/5;--r:2/7;--ar:1.45">
+          <img src="Assets/search result-desktop.png" alt="search result-desktop-nourish">
+        </div>
+        <div class="wf-img" data-label="Product list - desktop 2" style="--c:1/5;--r:8/13;--ar:1.45">
+          <img src="Assets/Product list-Desktop 1.png" alt="Product list-Desktop 1-nourish">
+        </div>
+        <div class="wf-note" style="--c:5/8;--r:2"><h4>Fixed Header</h4><p></p></div>
+        <div class="wf-note" style="--c:5/8;--r:4"><h4>Text Hierarchy</h4><p>Search word highlights in bold</p></div>
+        <div class="wf-note" style="--c:5/8;--r:6"><h4>Icon</h4><p>Using icon to indicate vegan option</p></div>
+        <div class="wf-note" style="--c:6/9;--r:9"><h4>Hover Animation</h4><p>Hover button will add border. Click button will change.</p></div>
+        <div class="wf-img is-phone" data-label="Product list - mobile 1" style="--c:8/10;--r:2/9;--ar:.45">
+          <img src="Assets/Search Result-final.png" alt="Search Result-final-nourish">
+        </div>
+        <div class="wf-img is-phone" data-label="Product list - mobile 2" style="--c:11/13;--r:2/13;--ar:.28">
+          <img src="Assets/Product List-2.png" alt="Product List-2-nourish">
+        </div>
+        <div class="wf-img" data-label="Add button states" style="--c:8/10;--r:10/13;--ar:1.4">
+          <img src="Assets/button status.png" alt="button status-nourish">
+        </div>
+      </div>
+      </div>
+      <div class="wf">
+      <div class="wf-grid" style="--rows:9">
+        <h3 class="wf-title" style="--c:1/6;--r:1">Product Detail</h3>
+        <div class="wf-img" data-label="Product detail - desktop" style="--c:1/5;--r:2/7;--ar:1.4">
+          <img src="Assets/Product detail-Desktop.png" alt="Product detail-Desktop-nourish">
+        </div>
+        <div class="wf-note" style="--c:1/5;--r:8"><h4>Click Feedback</h4><p>Making the selection adds a border.</p></div>
+        <div class="wf-note" style="--c:6/10;--r:4"><h4>Desktop Adaption</h4><p>Move the horizontally scrolling images to the bottom, and add a border to the images on the desktop version to indicate the user’s current status.</p></div>
+        <div class="wf-img is-phone" data-label="Product detail - mobile" style="--c:11/13;--r:3/9;--ar:.5">
+          <img src="Assets/Product Page-final.png" alt="-nourish">
+        </div>
+      </div>
+      </div>
+      <div class="wf">
+      <div class="wf-grid" style="--rows:13">
+        <h3 class="wf-title" style="--c:1/6;--r:1">Check out page</h3>
+        <div class="wf-img" data-label="Cart - desktop" style="--c:1/5;--r:2/7;--ar:1.37">
+          <img src="Assets/Shopping Cart-Desktop.png" alt="-nourish">
+        </div>
+        <div class="wf-img" data-label="Payment details - desktop" style="--c:1/5;--r:8/13;--ar:1.37">
+          <img src="Assets/Shopping Cart-Desktop-1.png" alt="-nourish">
+        </div>
+        <div class="wf-note" style="--c:5/9;--r:2"><h4>Desktop Adaption</h4><p>Collapse some sections</p></div>
+        <div class="wf-note" style="--c:5/9;--r:4"><h4>Selection Button</h4><p>Users can filter products within the cart</p></div>
+        <div class="wf-note" style="--c:5/9;--r:6"><h4>Desktop Text Adaption</h4><p>Maintain a clear typographic hierarchy</p></div>
+        <div class="wf-note" style="--c:5/7;--r:8"><h4>Mobile</h4><p>H1-32px<br>H2-28px<br>H3-20px<br>Body-14px<br>Caption-12px</p></div>
+        <div class="wf-note" style="--c:7/9;--r:8"><h4>Desktop</h4><p>H1-48px<br>H2-32px<br>H3-28px<br>Body-20px<br>Caption-14px</p></div>
+        <div class="wf-note" style="--c:5/9;--r:11"><h4>Color Platte</h4><p>Adjusting the shades of the branding color helps maintain visual consistency while ensuring readability.</p></div>
+        <div class="wf-img is-phone" data-label="Cart - mobile" style="--c:9/11;--r:2/9;--ar:.5">
+          <img src="Assets/Shopping Cart Page- 2.png" alt="-nourish">
+        </div>
+        <div class="wf-img is-phone" data-label="Payment - mobile" style="--c:11/13;--r:2/9;--ar:.5">
+          <img src="Assets/Shopping Cart Page- final.png" alt="-nourish">
+        </div>
+      </div>
+      </div>
+      <div class="wf">
+      <div class="wf-grid" style="--rows:9">
+        <h3 class="wf-title" style="--c:2/7;--r:1">Confirmation Payment</h3>
+        <div class="wf-img" data-label="Confirmation - desktop" style="--c:2/6;--r:2/7;--ar:1.5">
+          <img src="Assets/Shopping Cart-Desktop-2.png" alt="-nourish">
+        </div>
+        <div class="wf-note" style="--c:7/10;--r:2"><h4>Status Color</h4><p>Highlight the success status</p></div>
+        <div class="wf-note" style="--c:7/10;--r:4"><h4>Receipt Design</h4><p>Skeuomorphic design enhances user immersion.</p></div>
+        <div class="wf-img is-phone" data-label="Confirmation - mobile" style="--c:11/13;--r:2/9;--ar:.46">
+          <img src="Assets/Shopping Cart Page- final-1.png" alt="-nourish">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== Inspiration ===== -->
+    <section class="step" id="inspiration" data-nav="Inspiration" data-nav-key="nr.insp" data-align="left">
+      <header class="step-head">
+        <h2><span data-i18n="nr.insp">Inspiration</span></h2>
+      </header>
+    </section>
+  </div>
+  <div class="full-img" data-label="Inspiration image (full width)" style="--ar:16/8">
+    <img src="Assets/inspiration-nourish.png" alt="inspiration-nourish">
+  </div>
+
+  <div class="project">
+    <!-- ===== Ideation ===== -->
+    <section class="step" id="ideation" data-nav="Ideation" data-nav-key="nr.idea" data-align="left">
+      <header class="step-head">
+        <p>Color Balance - through contrast, visual weight and consistency. Color Balance - through contrast, visual weight and consistency.</p>
+        <h2><span data-i18n="nr.idea">Ideation</span></h2>
+      </header>
+      <div class="idea-grid" style="--ar:.6">
+        <figure class="idea">
+          <div class="idea-img" data-label="Sketch 1">
+            <img src="Assets/v1.JPG" alt="ideation1-nourish">
+          </div>
+          <figcaption>Color Balance - through contrast, visual weight and consistency</figcaption>
+        </figure>
+        <figure class="idea">
+          <div class="idea-img" data-label="Sketch 2">
+            <img src="Assets/v2.JPG" alt="ideation2-nourish">
+          </div>
+          <figcaption>Color Balance - through contrast, visual weight and consistency</figcaption>
+        </figure>
+        <figure class="idea">
+          <div class="idea-img" data-label="Sketch 3">
+            <img src="Assets/v3.JPG" alt="ideation3-nourish">
+          </div>
+          <figcaption>Color Balance - through contrast, visual weight and consistency</figcaption>
+        </figure>
+        <figure class="idea">
+          <div class="idea-img" data-label="Sketch 4">
+            <img src="Assets/v4.JPG" alt="ideation4-nourish">
+          </div>
+          <figcaption>Color Balance - through contrast, visual weight and consistency</figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="lang.js"></script>
+<script src="BoardKit.js"></script>
+<script src="Nourish.js"></script>
+</body>
+</html>

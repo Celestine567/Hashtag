@@ -39,7 +39,7 @@
       el.className = "deco";
       el.style.cssText =
         "--x:"+rand(0,100).toFixed(1)+"%;--y:"+rand(0,100).toFixed(1)+"%;"+
-        "--size:"+rand(8,30).toFixed(1)+"px;"+
+        "--size:"+rand(6,30).toFixed(1)+"px;"+
         "--tint:"+TINTS[Math.floor(rand(0,TINTS.length))]+";--alpha:"+rand(.5,.85).toFixed(2)+";"+
         morphVars()+
         "--dx:"+rand(-30,30).toFixed(0)+"px;--dy:"+rand(-30,30).toFixed(0)+"px;--rot:"+rand(-14,14).toFixed(0)+"deg;"+

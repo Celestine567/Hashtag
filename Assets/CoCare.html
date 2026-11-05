@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:5500/Cocare.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoCare</title>
+<link href="./CoCare_files/css.css" rel="stylesheet" type="text/css" media="all">
+<link href="./CoCare_files/Nourish.css" rel="stylesheet" type="text/css" media="all">   <!-- 复用：wf-grid / wf-img / wf-note / full-img -->
+<link href="./CoCare_files/CoCare.css" rel="stylesheet" type="text/css" media="all">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./CoCare_files/css2" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Heading ===== -->
+<header class="site-header">
+  <a class="brand" href="http://127.0.0.1:5500/index.html" aria-label="Home">
+    <img class="brand-logo" src="./CoCare_files/logo.svg" alt="logo-image">
+    <div>
+      <p class="wordmark">Ziyi Liu</p>
+      <p class="role" data-i18n="role">UI/UX Designer</p>
+    </div>
+  </a>
+
+   <!-- ===== bubble toggle ===== -->
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language" data-lang="en">
+  <!-- bottom -->
+  <span class="lang-fill is-en" aria-hidden="true"></span>
+  <span class="lang-fill is-cn" aria-hidden="true"></span>
+
+  <!-- middle: red bubble switch -->
+  <span class="lang-goo" aria-hidden="true">
+    <i class="goo-blob goo-left is-en"></i>
+    <i class="goo-center"></i>
+    <i class="goo-blob goo-right is-cn"></i>
+  </span>
+
+  <!-- top1: black outline -->
+  <span class="lang-outline is-en" aria-hidden="true"></span>
+  <span class="lang-outline is-cn" aria-hidden="true"></span>
+
+  <!-- top2: words -->
+  <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">CN</button>
+</div>
+
+<!-- ===== a filter ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="langGoo" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+    <fegaussianblur in="SourceGraphic" stdDeviation="4.5" result="blur"></fegaussianblur>
+    <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"></fecolormatrix>
+  </filter>
+</svg>
+
+<!-- ===== right ===== -->
+  <nav class="site-nav" aria-label="Main" id="siteNav">
+    <a href="http://127.0.0.1:5500/ProjectsList.html" data-i18n="nav.projects">All Projects</a>
+    <a href="http://127.0.0.1:5500/about.html" data-i18n="nav.about">About</a>
+  </nav>
+<button class="nav-toggle" type="button" aria-label="Menu" aria-controls="siteNav" aria-expanded="false"><span></span><span></span><span></span></button></header>
+
+<!-- bg-bubbles -->
+<div class="page-deco" id="pageDeco" aria-hidden="true"><div class="deco" style="--x: 19.6%; --y: 84.4%; --size: 19.2px; --tint: var(--d-6); --alpha: 0.68; --r-a: 63% 37% 38% 62% / 53% 47% 54% 46%; --r-b: 57% 43% 54% 46% / 36% 64% 56% 44%; --r-c: 65% 35% 58% 42% / 47% 53% 64% 36%; --dx: 13px; --dy: -23px; --rot: -2deg; --drift-dur: 7.4s; --morph-dur: 7.3s; --delay: -3.7s;"></div><div class="deco" style="--x: 66.0%; --y: 60.4%; --size: 15.3px; --tint: var(--d-2); --alpha: 0.79; --r-a: 40% 60% 55% 45% / 62% 38% 39% 61%; --r-b: 39% 61% 57% 43% / 37% 63% 35% 65%; --r-c: 49% 51% 62% 38% / 55% 45% 57% 43%; --dx: -29px; --dy: 14px; --rot: -2deg; --drift-dur: 6.5s; --morph-dur: 7.0s; --delay: -6.6s;"></div><div class="deco" style="--x: 12.1%; --y: 3.2%; --size: 6.4px; --tint: var(--d-2); --alpha: 0.72; --r-a: 57% 43% 39% 61% / 48% 52% 58% 42%; --r-b: 64% 36% 53% 47% / 56% 44% 44% 56%; --r-c: 42% 58% 47% 53% / 43% 57% 60% 40%; --dx: 14px; --dy: -17px; --rot: 7deg; --drift-dur: 14.1s; --morph-dur: 12.6s; --delay: -9.3s;"></div><div class="deco" style="--x: 19.8%; --y: 29.5%; --size: 8.2px; --tint: var(--d-3); --alpha: 0.83; --r-a: 48% 52% 51% 49% / 40% 60% 44% 56%; --r-b: 57% 43% 60% 40% / 65% 35% 35% 65%; --r-c: 51% 49% 53% 47% / 53% 47% 45% 55%; --dx: 22px; --dy: -24px; --rot: 1deg; --drift-dur: 10.3s; --morph-dur: 9.9s; --delay: -2.8s;"></div><div class="deco" style="--x: 32.4%; --y: 87.3%; --size: 10.1px; --tint: var(--d-3); --alpha: 0.59; --r-a: 61% 39% 47% 53% / 61% 39% 57% 43%; --r-b: 52% 48% 47% 53% / 53% 47% 56% 44%; --r-c: 42% 58% 61% 39% / 49% 51% 36% 64%; --dx: 30px; --dy: -1px; --rot: -9deg; --drift-dur: 15.1s; --morph-dur: 11.0s; --delay: -16.4s;"></div><div class="deco" style="--x: 33.5%; --y: 50.1%; --size: 6.7px; --tint: var(--d-4); --alpha: 0.60; --r-a: 37% 63% 44% 56% / 61% 39% 49% 51%; --r-b: 39% 61% 48% 52% / 51% 49% 64% 36%; --r-c: 59% 41% 38% 62% / 40% 60% 47% 53%; --dx: -9px; --dy: -12px; --rot: 8deg; --drift-dur: 10.1s; --morph-dur: 13.8s; --delay: -14.3s;"></div><div class="deco" style="--x: 47.3%; --y: 8.9%; --size: 14.5px; --tint: var(--d-6); --alpha: 0.68; --r-a: 59% 41% 42% 58% / 62% 38% 40% 60%; --r-b: 45% 55% 46% 54% / 40% 60% 36% 64%; --r-c: 46% 54% 50% 50% / 61% 39% 56% 44%; --dx: 17px; --dy: 22px; --rot: 11deg; --drift-dur: 6.9s; --morph-dur: 14.3s; --delay: -12.2s;"></div><div class="deco" style="--x: 67.0%; --y: 96.7%; --size: 27.1px; --tint: var(--d-4); --alpha: 0.55; --r-a: 50% 50% 46% 54% / 37% 63% 37% 63%; --r-b: 45% 55% 47% 53% / 56% 44% 62% 38%; --r-c: 59% 41% 63% 37% / 52% 48% 62% 38%; --dx: -16px; --dy: 27px; --rot: -6deg; --drift-dur: 13.2s; --morph-dur: 6.5s; --delay: -0.3s;"></div><div class="deco" style="--x: 85.4%; --y: 86.7%; --size: 10.1px; --tint: var(--d-3); --alpha: 0.68; --r-a: 60% 40% 44% 56% / 56% 44% 60% 40%; --r-b: 37% 63% 57% 43% / 49% 51% 51% 49%; --r-c: 38% 62% 41% 59% / 41% 59% 64% 36%; --dx: 11px; --dy: -30px; --rot: 1deg; --drift-dur: 6.7s; --morph-dur: 15.0s; --delay: -11.1s;"></div><div class="deco" style="--x: 37.3%; --y: 29.7%; --size: 24.6px; --tint: var(--d-6); --alpha: 0.68; --r-a: 55% 45% 47% 53% / 38% 62% 60% 40%; --r-b: 37% 63% 35% 65% / 38% 62% 62% 38%; --r-c: 40% 60% 46% 54% / 43% 57% 57% 43%; --dx: -28px; --dy: 2px; --rot: -13deg; --drift-dur: 9.2s; --morph-dur: 10.0s; --delay: -1.7s;"></div><div class="deco" style="--x: 97.0%; --y: 90.9%; --size: 21.9px; --tint: var(--d-5); --alpha: 0.67; --r-a: 48% 52% 55% 45% / 60% 40% 45% 55%; --r-b: 60% 40% 57% 43% / 38% 62% 60% 40%; --r-c: 59% 41% 60% 40% / 37% 63% 36% 64%; --dx: 12px; --dy: -7px; --rot: 8deg; --drift-dur: 13.9s; --morph-dur: 13.8s; --delay: -0.8s;"></div><div class="deco" style="--x: 33.6%; --y: 89.0%; --size: 15.4px; --tint: var(--d-2); --alpha: 0.58; --r-a: 54% 46% 61% 39% / 37% 63% 38% 62%; --r-b: 54% 46% 57% 43% / 57% 43% 51% 49%; --r-c: 37% 63% 47% 53% / 58% 42% 59% 41%; --dx: -10px; --dy: -9px; --rot: 1deg; --drift-dur: 6.3s; --morph-dur: 7.7s; --delay: -12.8s;"></div><div class="deco" style="--x: 27.1%; --y: 67.2%; --size: 15.6px; --tint: var(--d-2); --alpha: 0.77; --r-a: 37% 63% 47% 53% / 64% 36% 39% 61%; --r-b: 40% 60% 51% 49% / 40% 60% 40% 60%; --r-c: 59% 41% 62% 38% / 65% 35% 50% 50%; --dx: 17px; --dy: 2px; --rot: 8deg; --drift-dur: 12.7s; --morph-dur: 10.9s; --delay: -8.3s;"></div><div class="deco" style="--x: 57.5%; --y: 39.8%; --size: 24.2px; --tint: var(--d-1); --alpha: 0.64; --r-a: 42% 58% 59% 41% / 53% 47% 40% 60%; --r-b: 36% 64% 62% 38% / 38% 62% 54% 46%; --r-c: 38% 62% 41% 59% / 43% 57% 62% 38%; --dx: -10px; --dy: 11px; --rot: 3deg; --drift-dur: 8.8s; --morph-dur: 10.1s; --delay: -13.9s;"></div><div class="deco" style="--x: 30.9%; --y: 74.6%; --size: 10.2px; --tint: var(--d-1); --alpha: 0.53; --r-a: 62% 38% 51% 49% / 58% 42% 46% 54%; --r-b: 57% 43% 49% 51% / 59% 41% 43% 57%; --r-c: 47% 53% 60% 40% / 62% 38% 58% 42%; --dx: 22px; --dy: 28px; --rot: 6deg; --drift-dur: 6.4s; --morph-dur: 6.7s; --delay: -1.6s;"></div><div class="deco" style="--x: 65.7%; --y: 78.0%; --size: 8.0px; --tint: var(--d-6); --alpha: 0.59; --r-a: 59% 41% 63% 37% / 52% 48% 48% 52%; --r-b: 51% 49% 48% 52% / 56% 44% 42% 58%; --r-c: 64% 36% 56% 44% / 53% 47% 59% 41%; --dx: 11px; --dy: -19px; --rot: 5deg; --drift-dur: 7.5s; --morph-dur: 12.6s; --delay: -19.7s;"></div><div class="deco" style="--x: 94.6%; --y: 9.6%; --size: 17.3px; --tint: var(--d-2); --alpha: 0.68; --r-a: 57% 43% 46% 54% / 38% 62% 61% 39%; --r-b: 58% 42% 37% 63% / 39% 61% 45% 55%; --r-c: 44% 56% 53% 47% / 65% 35% 35% 65%; --dx: -10px; --dy: -26px; --rot: 14deg; --drift-dur: 7.3s; --morph-dur: 11.9s; --delay: -0.8s;"></div><div class="deco" style="--x: 19.4%; --y: 32.7%; --size: 27.2px; --tint: var(--d-2); --alpha: 0.51; --r-a: 51% 49% 60% 40% / 46% 54% 44% 56%; --r-b: 45% 55% 57% 43% / 61% 39% 51% 49%; --r-c: 45% 55% 59% 41% / 41% 59% 37% 63%; --dx: -25px; --dy: -2px; --rot: 4deg; --drift-dur: 9.5s; --morph-dur: 8.6s; --delay: -15.9s;"></div><div class="deco" style="--x: 40.2%; --y: 99.8%; --size: 10.4px; --tint: var(--d-4); --alpha: 0.83; --r-a: 44% 56% 44% 56% / 50% 50% 64% 36%; --r-b: 48% 52% 37% 63% / 62% 38% 63% 37%; --r-c: 39% 61% 37% 63% / 35% 65% 64% 36%; --dx: 2px; --dy: 14px; --rot: 14deg; --drift-dur: 7.4s; --morph-dur: 8.5s; --delay: -12.3s;"></div><div class="deco" style="--x: 48.1%; --y: 2.8%; --size: 29.5px; --tint: var(--d-5); --alpha: 0.75; --r-a: 44% 56% 48% 52% / 58% 42% 52% 48%; --r-b: 64% 36% 59% 41% / 52% 48% 53% 47%; --r-c: 59% 41% 63% 37% / 64% 36% 41% 59%; --dx: 26px; --dy: -12px; --rot: 6deg; --drift-dur: 12.1s; --morph-dur: 5.5s; --delay: -19.8s;"></div><div class="deco" style="--x: 88.3%; --y: 47.1%; --size: 14.8px; --tint: var(--d-2); --alpha: 0.51; --r-a: 62% 38% 62% 38% / 54% 46% 42% 58%; --r-b: 63% 37% 62% 38% / 38% 62% 42% 58%; --r-c: 64% 36% 47% 53% / 61% 39% 51% 49%; --dx: 28px; --dy: -18px; --rot: 8deg; --drift-dur: 10.4s; --morph-dur: 12.2s; --delay: -18.7s;"></div><div class="deco" style="--x: 95.0%; --y: 17.1%; --size: 29.3px; --tint: var(--d-3); --alpha: 0.67; --r-a: 35% 65% 40% 60% / 60% 40% 54% 46%; --r-b: 37% 63% 44% 56% / 54% 46% 39% 61%; --r-c: 41% 59% 62% 38% / 43% 57% 46% 54%; --dx: 26px; --dy: -1px; --rot: -3deg; --drift-dur: 7.5s; --morph-dur: 9.2s; --delay: -4.9s;"></div><div class="deco" style="--x: 83.0%; --y: 73.4%; --size: 18.8px; --tint: var(--d-6); --alpha: 0.84; --r-a: 64% 36% 59% 41% / 47% 53% 49% 51%; --r-b: 39% 61% 50% 50% / 59% 41% 60% 40%; --r-c: 41% 59% 63% 37% / 56% 44% 39% 61%; --dx: 30px; --dy: 20px; --rot: -12deg; --drift-dur: 10.8s; --morph-dur: 10.5s; --delay: -4.0s;"></div><div class="deco" style="--x: 58.6%; --y: 30.7%; --size: 15.9px; --tint: var(--d-1); --alpha: 0.75; --r-a: 61% 39% 47% 53% / 62% 38% 59% 41%; --r-b: 60% 40% 35% 65% / 42% 58% 36% 64%; --r-c: 57% 43% 42% 58% / 41% 59% 45% 55%; --dx: 12px; --dy: 1px; --rot: 7deg; --drift-dur: 13.8s; --morph-dur: 9.0s; --delay: -8.8s;"></div><div class="deco" style="--x: 30.3%; --y: 9.6%; --size: 13.9px; --tint: var(--d-2); --alpha: 0.65; --r-a: 39% 61% 57% 43% / 47% 53% 47% 53%; --r-b: 64% 36% 36% 64% / 51% 49% 53% 47%; --r-c: 61% 39% 63% 37% / 60% 40% 47% 53%; --dx: -30px; --dy: -11px; --rot: 2deg; --drift-dur: 9.0s; --morph-dur: 7.0s; --delay: -9.9s;"></div><div class="deco" style="--x: 67.4%; --y: 90.5%; --size: 23.4px; --tint: var(--d-6); --alpha: 0.75; --r-a: 60% 40% 56% 44% / 41% 59% 39% 61%; --r-b: 59% 41% 56% 44% / 40% 60% 49% 51%; --r-c: 42% 58% 55% 45% / 65% 35% 47% 53%; --dx: -3px; --dy: 27px; --rot: 11deg; --drift-dur: 13.7s; --morph-dur: 10.2s; --delay: -6.0s;"></div><div class="deco" style="--x: 17.2%; --y: 58.1%; --size: 25.0px; --tint: var(--d-3); --alpha: 0.75; --r-a: 40% 60% 55% 45% / 54% 46% 36% 64%; --r-b: 37% 63% 62% 38% / 42% 58% 50% 50%; --r-c: 37% 63% 56% 44% / 62% 38% 48% 52%; --dx: -20px; --dy: 9px; --rot: -7deg; --drift-dur: 12.9s; --morph-dur: 10.0s; --delay: -17.5s;"></div><div class="deco" style="--x: 29.6%; --y: 58.5%; --size: 26.3px; --tint: var(--d-6); --alpha: 0.84; --r-a: 36% 64% 39% 61% / 39% 61% 52% 48%; --r-b: 55% 45% 53% 47% / 61% 39% 60% 40%; --r-c: 60% 40% 54% 46% / 44% 56% 45% 55%; --dx: -20px; --dy: 5px; --rot: 13deg; --drift-dur: 8.4s; --morph-dur: 7.8s; --delay: -1.5s;"></div><div class="deco" style="--x: 86.9%; --y: 67.0%; --size: 13.1px; --tint: var(--d-2); --alpha: 0.51; --r-a: 54% 46% 36% 64% / 49% 51% 48% 52%; --r-b: 43% 57% 39% 61% / 49% 51% 57% 43%; --r-c: 35% 65% 59% 41% / 54% 46% 53% 47%; --dx: 23px; --dy: -1px; --rot: -12deg; --drift-dur: 12.6s; --morph-dur: 8.9s; --delay: -9.9s;"></div><div class="deco" style="--x: 75.0%; --y: 25.8%; --size: 22.5px; --tint: var(--d-2); --alpha: 0.64; --r-a: 59% 41% 37% 63% / 57% 43% 52% 48%; --r-b: 39% 61% 64% 36% / 43% 57% 46% 54%; --r-c: 44% 56% 47% 53% / 37% 63% 62% 38%; --dx: -10px; --dy: 24px; --rot: 7deg; --drift-dur: 15.1s; --morph-dur: 6.5s; --delay: -18.7s;"></div><div class="deco" style="--x: 2.0%; --y: 13.1%; --size: 24.5px; --tint: var(--d-3); --alpha: 0.59; --r-a: 60% 40% 43% 57% / 57% 43% 48% 52%; --r-b: 49% 51% 60% 40% / 47% 53% 51% 49%; --r-c: 56% 44% 55% 45% / 58% 42% 61% 39%; --dx: 29px; --dy: 2px; --rot: -2deg; --drift-dur: 6.7s; --morph-dur: 14.4s; --delay: -14.5s;"></div><div class="deco" style="--x: 12.5%; --y: 54.5%; --size: 6.1px; --tint: var(--d-3); --alpha: 0.63; --r-a: 36% 64% 64% 36% / 46% 54% 53% 47%; --r-b: 62% 38% 58% 42% / 60% 40% 55% 45%; --r-c: 43% 57% 44% 56% / 56% 44% 52% 48%; --dx: 27px; --dy: -16px; --rot: 13deg; --drift-dur: 11.2s; --morph-dur: 13.8s; --delay: -12.3s;"></div><div class="deco" style="--x: 59.6%; --y: 67.4%; --size: 28.0px; --tint: var(--d-3); --alpha: 0.65; --r-a: 48% 52% 64% 36% / 46% 54% 40% 60%; --r-b: 55% 45% 58% 42% / 56% 44% 58% 42%; --r-c: 51% 49% 37% 63% / 41% 59% 64% 36%; --dx: -17px; --dy: -24px; --rot: -6deg; --drift-dur: 14.7s; --morph-dur: 11.7s; --delay: -16.2s;"></div><div class="deco" style="--x: 95.7%; --y: 68.2%; --size: 22.2px; --tint: var(--d-3); --alpha: 0.52; --r-a: 42% 58% 62% 38% / 43% 57% 41% 59%; --r-b: 49% 51% 61% 39% / 46% 54% 56% 44%; --r-c: 39% 61% 49% 51% / 36% 64% 60% 40%; --dx: 18px; --dy: 14px; --rot: -11deg; --drift-dur: 14.9s; --morph-dur: 10.1s; --delay: -6.5s;"></div><div class="deco" style="--x: 22.5%; --y: 61.2%; --size: 19.0px; --tint: var(--d-6); --alpha: 0.64; --r-a: 45% 55% 35% 65% / 48% 52% 52% 48%; --r-b: 63% 37% 46% 54% / 54% 46% 48% 52%; --r-c: 48% 52% 53% 47% / 39% 61% 63% 37%; --dx: -9px; --dy: -5px; --rot: 11deg; --drift-dur: 13.9s; --morph-dur: 13.6s; --delay: -0.2s;"></div><div class="deco" style="--x: 66.0%; --y: 34.5%; --size: 17.1px; --tint: var(--d-4); --alpha: 0.66; --r-a: 53% 47% 45% 55% / 59% 41% 63% 37%; --r-b: 48% 52% 40% 60% / 55% 45% 45% 55%; --r-c: 40% 60% 41% 59% / 47% 53% 48% 52%; --dx: -23px; --dy: -8px; --rot: 8deg; --drift-dur: 15.7s; --morph-dur: 14.6s; --delay: -14.1s;"></div><div class="deco" style="--x: 68.7%; --y: 24.8%; --size: 18.6px; --tint: var(--d-5); --alpha: 0.63; --r-a: 36% 64% 38% 62% / 52% 48% 46% 54%; --r-b: 50% 50% 60% 40% / 58% 42% 48% 52%; --r-c: 39% 61% 44% 56% / 61% 39% 36% 64%; --dx: -5px; --dy: -3px; --rot: -9deg; --drift-dur: 10.9s; --morph-dur: 12.4s; --delay: -4.0s;"></div><div class="deco" style="--x: 83.8%; --y: 32.9%; --size: 12.8px; --tint: var(--d-3); --alpha: 0.70; --r-a: 63% 37% 44% 56% / 63% 37% 39% 61%; --r-b: 37% 63% 55% 45% / 59% 41% 37% 63%; --r-c: 41% 59% 45% 55% / 61% 39% 46% 54%; --dx: 25px; --dy: -20px; --rot: -0deg; --drift-dur: 14.2s; --morph-dur: 9.6s; --delay: -15.2s;"></div><div class="deco" style="--x: 88.1%; --y: 8.5%; --size: 19.5px; --tint: var(--d-2); --alpha: 0.84; --r-a: 65% 35% 39% 61% / 48% 52% 46% 54%; --r-b: 65% 35% 41% 59% / 47% 53% 53% 47%; --r-c: 52% 48% 44% 56% / 51% 49% 54% 46%; --dx: 19px; --dy: -17px; --rot: -8deg; --drift-dur: 15.3s; --morph-dur: 5.3s; --delay: -0.5s;"></div><div class="deco" style="--x: 77.0%; --y: 66.8%; --size: 7.8px; --tint: var(--d-6); --alpha: 0.65; --r-a: 47% 53% 45% 55% / 64% 36% 52% 48%; --r-b: 35% 65% 60% 40% / 54% 46% 53% 47%; --r-c: 55% 45% 46% 54% / 40% 60% 59% 41%; --dx: -1px; --dy: -21px; --rot: 13deg; --drift-dur: 13.5s; --morph-dur: 5.9s; --delay: -11.6s;"></div><div class="deco" style="--x: 72.9%; --y: 97.7%; --size: 10.4px; --tint: var(--d-6); --alpha: 0.61; --r-a: 59% 41% 49% 51% / 42% 58% 43% 57%; --r-b: 43% 57% 43% 57% / 51% 49% 39% 61%; --r-c: 51% 49% 45% 55% / 50% 50% 64% 36%; --dx: -26px; --dy: 30px; --rot: -7deg; --drift-dur: 15.8s; --morph-dur: 7.6s; --delay: -0.6s;"></div><div class="deco" style="--x: 73.0%; --y: 21.6%; --size: 29.1px; --tint: var(--d-6); --alpha: 0.76; --r-a: 50% 50% 54% 46% / 64% 36% 50% 50%; --r-b: 61% 39% 35% 65% / 59% 41% 51% 49%; --r-c: 45% 55% 43% 57% / 41% 59% 42% 58%; --dx: -5px; --dy: -20px; --rot: 7deg; --drift-dur: 15.5s; --morph-dur: 10.5s; --delay: -15.4s;"></div><div class="deco" style="--x: 26.6%; --y: 71.6%; --size: 28.5px; --tint: var(--d-4); --alpha: 0.69; --r-a: 65% 35% 61% 39% / 47% 53% 56% 44%; --r-b: 37% 63% 63% 37% / 56% 44% 53% 47%; --r-c: 42% 58% 52% 48% / 51% 49% 57% 43%; --dx: 8px; --dy: 1px; --rot: -6deg; --drift-dur: 11.4s; --morph-dur: 13.3s; --delay: -7.1s;"></div><div class="deco" style="--x: 31.7%; --y: 98.0%; --size: 18.3px; --tint: var(--d-4); --alpha: 0.52; --r-a: 59% 41% 57% 43% / 55% 45% 55% 45%; --r-b: 42% 58% 60% 40% / 63% 37% 46% 54%; --r-c: 59% 41% 39% 61% / 54% 46% 61% 39%; --dx: -1px; --dy: 18px; --rot: -10deg; --drift-dur: 11.7s; --morph-dur: 7.1s; --delay: -12.8s;"></div><div class="deco" style="--x: 11.5%; --y: 1.1%; --size: 27.1px; --tint: var(--d-1); --alpha: 0.75; --r-a: 45% 55% 47% 53% / 60% 40% 52% 48%; --r-b: 57% 43% 50% 50% / 56% 44% 64% 36%; --r-c: 53% 47% 64% 36% / 43% 57% 53% 47%; --dx: -7px; --dy: 28px; --rot: -10deg; --drift-dur: 14.2s; --morph-dur: 5.1s; --delay: -6.5s;"></div></div>
+
+<nav class="side-nav" id="sideNav" aria-label="Page sections"><a href="http://127.0.0.1:5500/Cocare.html#intro" data-i18n="nav.intro" class="is-active">Intro</a><a href="http://127.0.0.1:5500/Cocare.html#design-concept" data-i18n="cc.concept">Design Concept</a><a href="http://127.0.0.1:5500/Cocare.html#persona" data-i18n="cc.persona">Persona</a><a href="http://127.0.0.1:5500/Cocare.html#wireframe" data-i18n="cc.wire">Wireframe</a></nav>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <div class="project">
+        <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+      <h1 class="hero-title">
+        <span class="num-bubble" data-num="01" aria-hidden="true" style="--tint: var(--dark-blue);"><span class="bubble-shape"></span><span class="num">01</span></span>
+        <span data-i18n="cc.title">CoCare - A Parenting Community</span>
+      </h1>
+
+      <div class="hero-body">
+        <div class="hero-text">
+          <ul class="tags">
+            <li style="--r: 40% 60% 51% 49% / 55% 45% 43% 57%; transform: rotate(-0.11deg);">UI/UX</li>
+            <li style="--r: 38% 62% 42% 58% / 38% 62% 45% 55%; transform: rotate(0.11deg);">User Research</li>
+            <li style="--r: 58% 42% 37% 63% / 44% 56% 40% 60%; transform: rotate(-0.79deg);">Product Design</li>
+          </ul>
+                <p class="intro" data-i18n="cc.intro">CoCare is a mobile community where parents and caregivers can share experiences, find reliable information and support each other. (Replace with your own intro.)</p>
+                <p class="intro" data-i18n="cc.intro2">CoCare meets these needs through three connected features: a verified community, categorised collections and a family network.</p>
+        </div>
+
+        <div class="hero-media">
+          <!-- <div class="mock mock-laptop" data-label="MacBook mockup">
+            <img src="Assets/" alt="Nourish website on MacBook"> 
+          </div>-->
+          <div class="mock mock-phone" data-label="iPhone mockup">
+            <img src="./CoCare_files/community-cocare.png" alt="cocare  website on iPhone"> 
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="project">
+
+    <!-- ===== Design Concept===== -->
+    <section class="step" id="design-concept" data-nav="Design Concept" data-nav-key="cc.concept" data-align="left">
+      <header class="step-head">
+        <h2><span class="num-bubble" aria-hidden="true" data-num="01" style="--tint: var(--dark-blue);"><span class="bubble-shape"></span><span class="num">01</span></span><span data-i18n="cc.concept">Design Concept</span></h2>
+      </header>
+      <div class="wf">
+      <div class="wf-grid" style="--rows:32">
+        <div class="wf-img is-phone" data-label="Verify account – mockup" style="--c:2/5;--r:2/12;--ar:.47">
+          <img src="./CoCare_files/community-cocare.png" alt="community1 mockup">
+        </div>
+        <div class="wf-img is-phone" data-label="Community – mockup" style="--c:5/8;--r:1/11;--ar:.47">
+          <img src="./CoCare_files/community2-cocare.png" alt="community2 mockup">
+        </div>
+        <div class="wf-note is-lg" style="--c:8/12;--r:1"><h4>Verified Community</h4><p>It gives parents and caregivers peace of mind when discussing parenting challenges and learning from others in similar situations. Users go through a verification process before they can post, which helps to make sure that the people contributing to discussions are genuine parents or caregivers.</p></div>
+        <div class="wf-img is-phone" data-label="Family collections – mockup" style="--c:8/11;--r:12/22;--ar:.47">
+          <img src="./CoCare_files/collection-cocare.png" alt="collection cocare mockup">
+        </div>
+        <div class="wf-note is-lg" style="--c:3/8;--r:14"><h4>Family Network</h4><p>Once verified, a parent can generate invite codes for their partner, grandparents and other trusted caregivers, who join the family network without having to verify separately. Members share access to the family’s saved collections, where everyone sees the same information and can add posts they find useful.</p></div>
+        <div class="wf-img is-phone" data-label="Symptoms forums – mockup" style="--c:3/6;--r:22/32;--ar:.47">
+          <img src="./CoCare_files/forum-cocare.png" alt="forum cocare mockup">
+        </div>
+        <div class="wf-note is-lg" style="--c:6/12;--r:24"><h4>Symptoms Forums</h4><p>The Symptoms Forums help caregivers make sense of their baby’s symptoms and behaviours. Instead of searching broadly online, users can efficiently browse discussions organised around specific infant symptoms, similar to the communities.</p></div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== Persona ===== -->
+    <section class="step" id="persona" data-nav="Persona" data-nav-key="cc.persona" data-align="right">
+      <header class="step-head">
+        <h2><span class="num-bubble" aria-hidden="true" data-num="02" style="--tint: var(--c-y);"><span class="bubble-shape"></span><span class="num">02</span></span><span data-i18n="cc.persona">Persona</span></h2>
+      </header>
+    </section>
+  </div>
+  <div class="full-img" data-label="Persona image (full width)" style="--ar:1.55">
+    <img src="./CoCare_files/Cocare-persona.png" alt="cocare persona">
+  </div>
+
+  <div class="project">
+    <!-- =====  Wireframe===== -->
+    <section class="step" id="wireframe" data-nav="Wireframe" data-nav-key="cc.wire" data-align="left">
+      <header class="step-head">
+        <h2><span class="num-bubble" aria-hidden="true" data-num="03" style="--tint: var(--pink);"><span class="bubble-shape"></span><span class="num">03</span></span><span data-i18n="cc.wire">Wireframe</span></h2>
+      </header>
+      <div class="full-img is-contained" data-label="Wireframe – Identity Verification" style="--ar:1.7">
+        <img src="./CoCare_files/wireframe-Cocare.png" alt="cocare mockup">
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter"><div class="foot-actions"><a class="btn-blob" href="http://127.0.0.1:5500/index.html" data-i18n="foot.home">Take me home</a><button class="btn-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button></div><div class="marquee"><div class="marquee-track" id="marqueeTrack"><span class="mq-bubble" style="--size: 76px; --tint: var(--dark-blue); --r-a: 48% 52% 49% 51% / 54% 46% 52% 48%; --r-b: 64% 36% 41% 59% / 36% 64% 56% 44%; --r-c: 56% 44% 43% 57% / 65% 35% 64% 36%; --drift-dur: 22.0s; --morph-dur: 17.6s; --delay: -9.5s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 59px; --tint: var(--c-y); --r-a: 48% 52% 42% 58% / 39% 61% 63% 37%; --r-b: 43% 57% 35% 65% / 48% 52% 39% 61%; --r-c: 45% 55% 39% 61% / 41% 59% 41% 59%; --drift-dur: 16.0s; --morph-dur: 14.1s; --delay: -4.9s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/Cocare.html#">01 CoCare</a><span class="mq-bubble" style="--size: 64px; --tint: var(--pink); --r-a: 59% 41% 42% 58% / 37% 63% 41% 59%; --r-b: 55% 45% 60% 40% / 38% 62% 46% 54%; --r-c: 46% 54% 65% 35% / 46% 54% 56% 44%; --drift-dur: 21.1s; --morph-dur: 17.8s; --delay: -14.8s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 60px; --tint: var(--c-b); --r-a: 58% 42% 37% 63% / 35% 65% 44% 56%; --r-b: 50% 50% 39% 61% / 47% 53% 39% 61%; --r-c: 47% 53% 42% 58% / 37% 63% 51% 49%; --drift-dur: 19.8s; --morph-dur: 11.2s; --delay: -2.2s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/BoardKit.html">02 BoardKit</a><span class="mq-bubble" style="--size: 61px; --tint: var(--dark-blue); --r-a: 50% 50% 58% 42% / 59% 41% 59% 41%; --r-b: 45% 55% 42% 58% / 41% 59% 56% 44%; --r-c: 55% 45% 65% 35% / 44% 56% 59% 41%; --drift-dur: 17.3s; --morph-dur: 13.5s; --delay: -0.1s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 73px; --tint: var(--c-y); --r-a: 49% 51% 60% 40% / 55% 45% 57% 43%; --r-b: 43% 57% 59% 41% / 36% 64% 60% 40%; --r-c: 43% 57% 45% 55% / 47% 53% 38% 62%; --drift-dur: 20.6s; --morph-dur: 15.4s; --delay: -7.2s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/Cocare.html#">03 Nourish</a><span class="mq-bubble" style="--size: 67px; --tint: var(--pink); --r-a: 61% 39% 61% 39% / 53% 47% 53% 47%; --r-b: 50% 50% 41% 59% / 54% 46% 61% 39%; --r-c: 44% 56% 47% 53% / 40% 60% 43% 57%; --drift-dur: 14.6s; --morph-dur: 16.9s; --delay: -1.5s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 64px; --tint: var(--c-b); --r-a: 55% 45% 49% 51% / 60% 40% 65% 35%; --r-b: 41% 59% 40% 60% / 39% 61% 60% 40%; --r-c: 65% 35% 42% 58% / 42% 58% 63% 37%; --drift-dur: 21.8s; --morph-dur: 13.0s; --delay: -5.9s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/Cocare.html#">04 Portfolio</a><span class="mq-bubble" style="--size: 63px; --tint: var(--dark-blue); --r-a: 44% 56% 54% 46% / 60% 40% 48% 52%; --r-b: 50% 50% 61% 39% / 49% 51% 45% 55%; --r-c: 39% 61% 51% 49% / 48% 52% 36% 64%; --drift-dur: 22.5s; --morph-dur: 16.7s; --delay: -13.3s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 61px; --tint: var(--c-y); --r-a: 36% 64% 49% 51% / 43% 57% 52% 48%; --r-b: 41% 59% 46% 54% / 57% 43% 47% 53%; --r-c: 49% 51% 54% 46% / 59% 41% 61% 39%; --drift-dur: 21.3s; --morph-dur: 14.2s; --delay: -4.1s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/Cocare.html#">01 CoCare</a><span class="mq-bubble" style="--size: 64px; --tint: var(--pink); --r-a: 39% 61% 54% 46% / 46% 54% 57% 43%; --r-b: 47% 53% 50% 50% / 63% 37% 60% 40%; --r-c: 46% 54% 53% 47% / 56% 44% 36% 64%; --drift-dur: 15.8s; --morph-dur: 16.2s; --delay: -1.0s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 70px; --tint: var(--c-b); --r-a: 52% 48% 53% 47% / 61% 39% 53% 47%; --r-b: 41% 59% 65% 35% / 48% 52% 60% 40%; --r-c: 45% 55% 38% 62% / 38% 62% 52% 48%; --drift-dur: 18.5s; --morph-dur: 15.4s; --delay: -2.5s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/BoardKit.html">02 BoardKit</a><span class="mq-bubble" style="--size: 71px; --tint: var(--dark-blue); --r-a: 64% 36% 43% 57% / 53% 47% 50% 50%; --r-b: 44% 56% 55% 45% / 59% 41% 53% 47%; --r-c: 42% 58% 37% 63% / 35% 65% 43% 57%; --drift-dur: 22.8s; --morph-dur: 10.4s; --delay: -5.3s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 62px; --tint: var(--c-y); --r-a: 64% 36% 57% 43% / 55% 45% 54% 46%; --r-b: 61% 39% 42% 58% / 49% 51% 48% 52%; --r-c: 46% 54% 38% 62% / 47% 53% 45% 55%; --drift-dur: 20.8s; --morph-dur: 11.1s; --delay: -6.5s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/Cocare.html#">03 Nourish</a><span class="mq-bubble" style="--size: 68px; --tint: var(--pink); --r-a: 59% 41% 48% 52% / 48% 52% 57% 43%; --r-b: 47% 53% 64% 36% / 48% 52% 36% 64%; --r-c: 65% 35% 47% 53% / 41% 59% 35% 65%; --drift-dur: 22.3s; --morph-dur: 16.3s; --delay: -14.0s;"><span class="bubble-shape"></span></span><span class="mq-bubble" style="--size: 75px; --tint: var(--c-b); --r-a: 46% 54% 59% 41% / 54% 46% 36% 64%; --r-b: 41% 59% 43% 57% / 60% 40% 41% 59%; --r-c: 64% 36% 60% 40% / 56% 44% 45% 55%; --drift-dur: 18.9s; --morph-dur: 12.8s; --delay: -8.0s;"><span class="bubble-shape"></span></span><a class="mq-word" href="http://127.0.0.1:5500/Cocare.html#">04 Portfolio</a></div></div></footer>
+
+<script src="./CoCare_files/lang.js"></script>
+<script src="./CoCare_files/BoardKit.js"></script>
+<script src="./CoCare_files/CoCare.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

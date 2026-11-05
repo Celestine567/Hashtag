@@ -1,18 +1,15 @@
 (function(){
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var COLS  = ["--c-r","--c-o","--c-y","--c-b"];
+  var COLS  = ["--dark-blue","--c-y","--pink","--c-b"];
   var TINTS = ["var(--d-1)","var(--d-2)","var(--d-3)","var(--d-4)","var(--d-5)","var(--d-6)"];
 
-  /* ============ CONFIG：新增项目只改这里 ============ */
-  // footer 跑马灯里的项目（href 做好页面后再改）
   var PROJECTS = [
-    {n:"01", name:"CoCare",    href:"#"},
+    {n:"01", name:"CoCare",    href:"Cocare.html"},
     {n:"02", name:"BoardKit",  href:"BoardKit.html"},
-    {n:"03", name:"Nourish",   href:"#"},
-    {n:"04", name:"Portfolio", href:"#"}
+    {n:"03", name:"Nourish",   href:"nourish.html"},
   ];
-  // 本页文字的中英文（会合并进 lang.js 的 I18N，不用改 lang.js）
+
   var TEXT = {
     en:{ "nav.intro":"Intro","sec.research":"User Research","sec.persona":"Persona","sec.pain":"Pain Point","sec.ux":"UX Architecture","sec.wire":"Wireframe","foot.home":"Take me home",
          "hero.title":"BoardKit - A Board Game Assistant" },
@@ -48,7 +45,7 @@
     }
   }
 
-  /* ---------- 章节编号泡泡：按顺序自动生成 01 02 03… ---------- */
+  /* ---------- chapter bubble color ---------- */
   function fillBubble(b){
     var n = b.dataset.num;
     b.style.setProperty("--tint","var("+COLS[(parseInt(n,10)-1)%COLS.length]+")");
@@ -63,7 +60,7 @@
   });
   $$(".num-bubble[data-num]").forEach(fillBubble);
 
-  /* ---------- 左侧导航：根据 [data-nav] 自动生成，滚动时高亮 ---------- */
+  /* ---------- left nav bar-project content---------- */
   var secs = $$("[data-nav]");
   var nav  = document.getElementById("sideNav");
   var links = [];
@@ -86,7 +83,6 @@
     onScroll();
   }
 
-  /* ---------- 痛点泡泡 / 技能圆点 ---------- */
   $$(".blob").forEach(function(b){
     b.style.cssText += morphVars()+"--morph-dur:"+rand(9,16).toFixed(1)+"s;--delay:-"+rand(0,10).toFixed(1)+"s;";
   });
@@ -95,7 +91,7 @@
     for(var k=0;k<5;k++){ var dot = document.createElement("i"); if(k<lv) dot.className="on"; d.appendChild(dot); }
   });
 
-  /* ---------- Footer：Take me home / top / 项目跑马灯 ---------- */
+  /* ---------- Footer ---------- */
   var foot = document.getElementById("siteFooter");
   if(foot){
     foot.innerHTML =
@@ -119,7 +115,7 @@
       b.innerHTML = '<span class="bubble-shape"></span>';
       return b;
     };
-    for(var copy=0; copy<2; copy++){            // 复制两份才能无缝循环
+    for(var copy=0; copy<2; copy++){            
       PROJECTS.forEach(function(p){
         track.appendChild(bubble()); track.appendChild(bubble());
         var a = document.createElement("a");
@@ -130,13 +126,13 @@
     }
   }
 
-  /* ---------- tag 边框 ---------- */
+  /* ---------- tag outline ---------- */
   $$(".tags li").forEach(function(li){
     li.style.setProperty("--r", radius());
     li.style.transform = "rotate("+rand(-0.8,0.8).toFixed(2)+"deg)";
   });
 
-  /* ---------- 合并本页文字进 lang.js 的字典，并刷新一次 ---------- */
+  /* ----------  lang.js  ---------- */
   if(typeof I18N !== "undefined" && typeof setLang === "function"){
     Object.keys(TEXT).forEach(function(l){ Object.assign(I18N[l], TEXT[l]); });
     var sw = document.getElementById("langSwitch");

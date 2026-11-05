@@ -23,8 +23,38 @@ const I18N = {
     "cc.intro2":  "CoCare meets these needs through three connected features: a verified community, categorised collections and a family network.",
     "cc.concept": "Design Concept",
     "cc.persona": "Persona",
-    "cc.wire":    "Wireframe"
+    "cc.wire":    "Wireframe",
+
+    /* BoardKit */
+    "bk.title": "BoardKit - A Board Game Assistant",
+    "bk.intro": "The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.",
+    /* Project List */
+    "pl.cocare.title": "CoCare",
+    "pl.cocare.desc": "CoCare is a mobile app that brings parents and caregivers together to share experiences, find reliable information about infant care, and support each other.",
+    "pl.boardkit.title": "BoardKit",
+    "pl.boardkit.desc": "BoardKit is a social platform for board game players to coordinate schedules, organise game sessions, and stay connected with friends.",
+    "pl.nourish.title": "Nourish Website Redesign",
+    "pl.nourish.desc": "A website redesign focused on improving usability and navigation while maintaining Nourish's luxurious and minimalist brand identity.",
+    "bk.research.desc": "The project timeline covers the period from the initial concept to the development stage.",
+    "bk.persona": "User Personas",
+    "bk.persona.desc": "User personas were developed based on insights gathered from interviews.",
+    /* About */
+    "about.education": "Education",
+    "about.university": "University of Melbourne",
+    "about.degree": "User Experience Design",
+    "about.experience": "Experience",
+    "about.marketing": "Marketing Intern",
+    "about.marketing.desc": "Contacted KOLs on social media and supported influencer marketing activities.",
+    "about.ux": "UX Design Studio Project",
+    "about.ux.desc": "Collaborated with classmates on a user research and prototype design project.",
+    "about.mentor": "Peer Mentor",
+    "about.mentor.desc": "Supported new students in adapting to university life and their studies.",
+    "about.skills": "Skills",
+    "about.language": "Languages",
+    "about.english": "Fluent",
+    "about.mandarin": "Native"
   },
+
   zh: {
     "role":         "UI/UX 设计师",
     "nav.projects": "全部项目",
@@ -47,7 +77,36 @@ const I18N = {
     "cc.intro2":  "CoCare 通过三个相互关联的核心功能满足这些需求：认证社区、分类信息收集工具和家庭网络。",
     "cc.concept": "设计概念",
     "cc.persona": "用户画像",
-    "cc.wire":    "线框图"
+    "cc.wire":    "线框图",
+
+    /* BoardKit */
+    "bk.title": "BoardKit - 桌游社交与时间管理工具",
+    "bk.intro": "BoardKit 是一款桌游辅助应用，旨在帮助玩家更方便地组织游戏、协调时间，并提升整体游戏体验。",
+    /* Project List */
+    "pl.cocare.title": "CoCare",
+    "pl.cocare.desc": "CoCare 是一款为父母及照护者打造的移动应用，帮助他们分享育儿经验、获取可靠的婴儿护理信息，并在社区中互相支持。",
+    "pl.boardkit.title": "BoardKit",
+    "pl.boardkit.desc": "BoardKit 是一款面向桌游玩家的社交平台，帮助用户协调空闲时间、组织桌游活动，并与朋友保持联系。",
+    "pl.nourish.title": "Nourish 网站重新设计",
+    "pl.nourish.desc": "本项目通过重新设计 Nourish 网站，改善网站的可用性与导航体验，同时保留品牌奢华、简约的视觉风格。",
+    "bk.research.desc": "项目时间线展示了从最初概念构思到设计开发阶段的整个过程。",
+    "bk.persona": "用户画像",
+    "bk.persona.desc": "根据用户访谈中收集到的见解，整理并创建了具有代表性的用户画像。",
+    /* About */
+    "about.education": "教育背景",
+    "about.university": "墨尔本大学",
+    "about.degree": "用户体验设计",
+    "about.experience": "工作与项目经历",
+    "about.marketing": "市场营销实习生",
+    "about.marketing.desc": "通过社交媒体联系 KOL，并协助开展网红营销活动。",
+    "about.ux": "用户体验设计工作室项目",
+    "about.ux.desc": "与同学合作完成用户研究与原型设计项目。",
+    "about.mentor": "同伴导师",
+    "about.mentor.desc": "帮助新生适应大学学习与校园生活。",
+    "about.skills": "技能",
+    "about.language": "语言能力",
+    "about.english": "流利",
+    "about.mandarin": "母语"
   }
 };
 

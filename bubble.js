@@ -7,7 +7,7 @@ var PROJECT_PAGES_READY = true; // switch-control clickable bubble
 
   slots.forEach(function(slot){
     slot.querySelector(".bubble").addEventListener("click", function(e){
-      // 手机：第一次点击只展开 bubble 看图片，再点一次才跳转
+      // mobile
       if(touch && !slot.classList.contains("is-open")){
         e.preventDefault();
         closeAll();
@@ -18,7 +18,6 @@ var PROJECT_PAGES_READY = true; // switch-control clickable bubble
       this.blur();
     });
   });
-  // 点空白处收起
   document.addEventListener("click", function(e){
     if(!e.target.closest(".slot")) closeAll();
   });

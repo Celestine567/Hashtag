@@ -9,7 +9,7 @@
     return a+"% "+b+"% "+c+"% "+d+"% / "+e+"% "+f+"% "+g+"% "+h+"%";
   }
 
-  /* ---------- bg bubbles（从 BoardKit.js 原样复制） ---------- */
+  /* ---------- bg bubbles ---------- */
   var deco = document.getElementById("pageDeco");
   var count = window.innerWidth > 720 ? 45 : 22;
   for(var i=0;i<count;i++){
@@ -25,7 +25,6 @@
     deco.appendChild(el);
   }
 
-  /* ---------- tag 边框（和 BoardKit 同一段） ---------- */
   document.querySelectorAll(".tags li").forEach(function(li){
     li.style.setProperty("--r", radius());
     li.style.setProperty("--bw", [
@@ -37,14 +36,13 @@
     li.style.transform = "rotate("+rand(-0.8,0.8).toFixed(2)+"deg)";
   });
 
-  /* ---------- 新增：每个项目一条不同的静止曲线 ---------- */
   function wavyPath(w,h){
     var segs = Math.round(rand(3,5)), step = w/segs, mid = h/2;
     var d = "M0 "+(mid+rand(-3,3)).toFixed(1);
     for(var i=1;i<=segs;i++){
       var x  = (i*step).toFixed(1);
       var cx = ((i-0.5)*step + rand(-step*.15, step*.15)).toFixed(1);
-      var cy = (mid + (i%2 ? -1 : 1) * rand(5,9)).toFixed(1);   // 上下交替，形成波浪
+      var cy = (mid + (i%2 ? -1 : 1) * rand(5,9)).toFixed(1);   
       var y  = (mid + rand(-3,3)).toFixed(1);
       d += " Q"+cx+" "+cy+" "+x+" "+y;
     }
@@ -54,7 +52,6 @@
     p.setAttribute("d", wavyPath(400,20));
   });
 
-  /* ---------- 新增：hover 切换右边的图片 ---------- */
   var items  = document.querySelectorAll(".project-item");
   var slides = document.querySelectorAll(".preview-slide");
   function show(n){
@@ -62,7 +59,7 @@
   }
   items.forEach(function(it,n){
     it.addEventListener("mouseenter", function(){ show(n); });
-    it.addEventListener("focusin",    function(){ show(n); });   // 键盘 Tab 也能切换
+    it.addEventListener("focusin",    function(){ show(n); });   
   });
   show(0);
 })();

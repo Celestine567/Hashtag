@@ -63,16 +63,17 @@
 <div class="page-deco" id="pageDeco" aria-hidden="true"></div>
 
 <main>
-  <!-- ===== Hero：ZIYI LIU 图片在下层，头像在上层 ===== -->
   <section class="about-hero project">
     <div class="name-wrap">
       <img class="name-art" src="Assets/ziyi-liu.png" alt="Ziyi Liu">
-      <!-- 把你的照片命名为 profile.png 放同目录；没有时只显示红色泡泡 -->
       <div class="profile"><img src="Assets/MyProfile.png" alt="Portrait of Ziyi Liu" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="about-links">
+      <a class="btn-blob" href="https://www.linkedin.com/in/你的链接" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </section>
 
-  <section class="band band-flat">
+  <section class="band band-red">
     <div class="project">
       <h2 class="hi">Hi !</h2>
       <p class="hi-text">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions. Replace this with your own introduction.</p>
@@ -80,7 +81,7 @@
   </section>
 
   <div class="project cv">
-    <section class="cv-block">
+        <section class="cv-block">
       <h2>Education</h2>
       <div class="cv-row"><span class="when">2024 - Present</span><div><b>University of Melbourne</b><small>User Experience design</small></div></div>
     </section>
@@ -88,35 +89,26 @@
     <div class="cv-cols cv-block">
       <section>
         <h2>Experience</h2>
-        <div class="cv-row"><span class="when">2025</span><div><b>Marketing Intern</b><small>Contact KOLs on social media</small></div></div>
-        <div class="cv-row"><span class="when">2024</span><div><b>Marketing Intern</b><small>Contact KOLs on social media</small></div></div>
+        <div class="cv-row"><span class="when">2025-2026</span><div><b>Marketing Intern</b><small>Contact KOLs on social media</small></div></div>
+        <div class="cv-row"><span class="when">2025</span><div><b>UX Design Studio 项目</b><small>与同学合作完成一项用户体验研究与原型设计项目</small></div></div>
+        <div class="cv-row"><span class="when">2025</span><div><b>同伴导师 (Peer Mentor)</b><small>协助新生适应大学学习与生活环境</small></div></div>
       </section>
+
       <section>
         <h2>Skills</h2>
-        <div class="skills">
-          <div>
-            <h3>Software Skills</h3>
-            <div class="skill"><span class="skill-ic">Fg</span><span class="dots" data-level="4"></span></div>
-            <div class="skill"><span class="skill-ic">Ai</span><span class="dots" data-level="3"></span></div>
-            <div class="skill"><span class="skill-ic">Ps</span><span class="dots" data-level="3"></span></div>
-          </div>
-          <div>
-            <h3>Coding Skill</h3>
-            <div class="skill"><span class="skill-ic">HTML</span><span class="dots" data-level="4"></span></div>
-            <div class="skill"><span class="skill-ic">CSS</span><span class="dots" data-level="3"></span></div>
-            <div class="skill"><span class="skill-ic">JS</span><span class="dots" data-level="3"></span></div>
-          </div>
+        <!-- 长方形照片：在里面加 <img src="xxx.jpg" alt="">，占位文字会自动消失 -->
+        <div class="skills-photo" data-label="Photo">
+          <img src="Assets/skill-icon.png" alt="icon">
         </div>
       </section>
     </div>
 
     <section class="cv-block">
       <h2>Language</h2>
-      <div class="langs"><div><span>English</span><span>Fluent</span></div><div><span>Mandarin</span><span>Native</span></div></div>
-    </section>
-
-    <section class="cv-block hobbies">
-      <h2>Hobbies &amp; Interests</h2>
+      <div class="langs">
+        <div><b>English</b><span>Fluent</span></div>
+        <div><b>Mandarin</b><span>Native</span></div>
+      </div>
     </section>
   </div>
 </main>

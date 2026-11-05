@@ -1,4 +1,4 @@
-var PROJECT_PAGES_READY = false; //true
+var PROJECT_PAGES_READY = true; // switch-control clickable bubble
 
 (function(){
   var touch = window.matchMedia("(hover: none)").matches;

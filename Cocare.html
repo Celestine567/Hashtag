@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BoardKit</title>
+<title>CoCare</title>
 <link href="css.css" rel="stylesheet" type="text/css" media="all">
+<link href="Nourish.css" rel="stylesheet" type="text/css" media="all">   <!-- 复用：wf-grid / wf-img / wf-note / full-img -->
+<link href="CoCare.css" rel="stylesheet" type="text/css" media="all">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -62,114 +64,96 @@
 <!-- bg-bubbles -->
 <div class="page-deco" id="pageDeco" aria-hidden="true"></div>
 
-<!-- ===== CHANGED: left side nav, 由 JS 根据下面带 data-nav 的区块自动生成 ===== -->
 <nav class="side-nav" id="sideNav" aria-label="Page sections"></nav>
 
 <main>
   <!-- ===== Hero ===== -->
   <div class="project">
-    <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+        <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
       <h1 class="hero-title">
         <span class="num-bubble" data-num="02" aria-hidden="true"></span>
-        <span data-i18n="hero.title">BoardKit - A Board Game Assistant</span>
+        <span data-i18n="nr.title">BoardKit - A Board Game Assistant</span>
       </h1>
-      <ul class="tags">
-        <li>UI/UX</li>
-        <li>User Research</li>
-        <li>Product Design</li>
-      </ul>
-      <p class="intro" data-i18n="hero.intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
-    </section>
-  </div>
 
-  <!-- ===== Prototype showcase：灰色留给 video / 图片，换成 <video src=""> 或 <img src=""> 即可 ===== -->
-  <section class="band band-grey showcase" aria-label="Prototype showcase">
-  </section>
+      <div class="hero-body">
+        <div class="hero-text">
+          <ul class="tags">
+            <li>UI/UX</li>
+            <li>User Research</li>
+            <li>Product Design</li>
+          </ul>
+                <p class="intro" data-i18n="cc.intro">CoCare is a mobile community where parents and caregivers can share experiences, find reliable information and support each other. (Replace with your own intro.)</p>
+                <p class="intro" data-i18n="cc.intro2">CoCare meets these needs through three connected features: a verified community, categorised collections and a family network.</p>
+        </div>
 
-  <div class="project">
-
-    <section class="step" id="user-research" data-nav="User Research" data-nav-key="sec.research" data-align="right">
-      <header class="step-head">
-        <p>The project timeline covers the period from the initial concept to the development stage.</p>
-        <h2><span data-i18n="sec.research">User Research</span></h2>
-      </header>
-      <div class="ph">image</div>
-    </section>
-
-    <section class="step" id="persona" data-nav="Persona" data-nav-key="sec.persona" data-align="left">
-      <header class="step-head">
-        <p>Who we designed for, and what they need.</p>
-        <h2><span data-i18n="sec.persona">Persona</span></h2>
-      </header>
-      <div class="persona-list">
-        <svg class="persona-path" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
-          <defs><marker id="pArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>
-          <path d="M20 40 C-20 200 60 320 240 340 S 640 290 820 310 S 1010 420 940 570" marker-end="url(#pArrow)"/>
-        </svg>
-        <article class="persona">
-          <div class="avatar"><!-- <img src="images/derek.jpg" alt="Derek"> --></div>
-          <div>
-            <h3>Derek</h3>
-            <p>Derek spends most of his free time playing video games. A large portion of his friends have been made solely online, but he also plays board games with family.</p>
-            <div class="persona-cols">
-              <div><h4>Pains</h4><ul><li>Setting up pieces and the board takes time</li><li>Board games are easily bore due to their slower pace</li></ul></div>
-              <div><h4>Goals</h4><ul><li>Incentives to keep playing and remain loyal</li><li>Ways to increase the pace of play</li></ul></div>
-            </div>
+        <div class="hero-media">
+          <!-- <div class="mock mock-laptop" data-label="MacBook mockup">
+            <img src="Assets/" alt="Nourish website on MacBook"> 
+          </div>-->
+          <div class="mock mock-phone" data-label="iPhone mockup">
+            <img src="Assets/community-cocare.png" alt="cocare  website on iPhone"> 
           </div>
-        </article>
-        <article class="persona">
-          <div class="avatar"><!-- <img src="images/alice.jpg" alt="Alice"> --></div>
-          <div>
-            <h3>Alice</h3>
-            <p>When not busy studying, Alice can be found out grabbing dinner or drinks with friends, always eager to get out.</p>
-            <div class="persona-cols">
-              <div><h4>Pains</h4><ul><li>Lacking social connections and time required for organisation</li><li>Tendency to zone out during gameplay</li></ul></div>
-              <div><h4>Goals</h4><ul><li>Ability to organise times for games</li><li>A way to keep track of gameplay</li></ul></div>
-            </div>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
   </div>
 
-  <!-- ===== Pain point：红色波浪色块（.band 自己是 .step，里面再套一个 .project 控制宽度） ===== -->
-  <section class="band band-red step" id="pain-point" data-nav="Pain Point" data-nav-key="sec.pain" data-align="right">
-    <div class="project">
-      <header class="step-head">
-        <p>The project timeline covers the period from the initial concept to the development stage.</p>
-        <h2><span data-i18n="sec.pain">Pain Point</span></h2>
-      </header>
-      <div class="pain-grid">
-        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
-        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
-        <div class="blob"><ul><li>When not busy studying, Alice can be found out grabbing dinner or drinks with friends</li><li>Keep conversation going</li></ul></div>
-      </div>
-    </div>
-  </section>
-
   <div class="project">
-    <section class="step" id="ux-architecture" data-nav="UX Architecture" data-nav-key="sec.ux" data-align="left">
+
+    <!-- ===== Design Concept===== -->
+    <section class="step" id="design-concept" data-nav="Design Concept" data-nav-key="cc.concept" data-align="left">
       <header class="step-head">
-        <p>The project timeline covers the period from the initial concept to the development stage.</p>
-        <h2><span data-i18n="sec.ux">UX Architecture</span></h2>
+        <h2><span data-i18n="cc.concept">Design Concept</span></h2>
       </header>
-      <div class="ph">image</div>
+      <div class="wf">
+      <div class="wf-grid" style="--rows:32">
+        <div class="wf-img is-phone" data-label="Verify account – mockup" style="--c:2/5;--r:2/12;--ar:.47">
+          <img src="Assets/community-cocare.png" alt="community1 mockup">
+        </div>
+        <div class="wf-img is-phone" data-label="Community – mockup" style="--c:5/8;--r:1/11;--ar:.47">
+          <img src="Assets/community2-cocare.png" alt="community2 mockup">
+        </div>
+        <div class="wf-note is-lg" style="--c:8/12;--r:1"><h4>Verified Community</h4><p>It gives parents and caregivers peace of mind when discussing parenting challenges and learning from others in similar situations. Users go through a verification process before they can post, which helps to make sure that the people contributing to discussions are genuine parents or caregivers.</p></div>
+        <div class="wf-img is-phone" data-label="Family collections – mockup" style="--c:8/11;--r:12/22;--ar:.47">
+          <img src="Assets/collection-cocare.png" alt="collection cocare mockup">
+        </div>
+        <div class="wf-note is-lg" style="--c:3/8;--r:14"><h4>Family Network</h4><p>Once verified, a parent can generate invite codes for their partner, grandparents and other trusted caregivers, who join the family network without having to verify separately. Members share access to the family’s saved collections, where everyone sees the same information and can add posts they find useful.</p></div>
+        <div class="wf-img is-phone" data-label="Symptoms forums – mockup" style="--c:3/6;--r:22/32;--ar:.47">
+          <img src="Assets/forum-cocare.png" alt="forum cocare mockup">
+        </div>
+        <div class="wf-note is-lg" style="--c:6/12;--r:24"><h4>Symptoms Forums</h4><p>The Symptoms Forums help caregivers make sense of their baby’s symptoms and behaviours. Instead of searching broadly online, users can efficiently browse discussions organised around specific infant symptoms, similar to the communities.</p></div>
+      </div>
+      </div>
     </section>
 
-    <section class="step" id="wireframe" data-nav="Wireframe" data-nav-key="sec.wire" data-align="right">
+    <!-- ===== Persona ===== -->
+    <section class="step" id="persona" data-nav="Persona" data-nav-key="cc.persona" data-align="right">
       <header class="step-head">
-        <p>The project timeline covers the period from the initial concept to the development stage.</p>
-        <h2><span data-i18n="sec.wire">Wireframe</span></h2>
+        <h2><span data-i18n="cc.persona">Persona</span></h2>
       </header>
-      <div class="ph">image</div>
+    </section>
+  </div>
+  <div class="full-img" data-label="Persona image (full width)" style="--ar:1.55">
+    <img src="Assets/Cocare-persona.png" alt="cocare persona">
+  </div>
+
+  <div class="project">
+    <!-- =====  Wireframe===== -->
+    <section class="step" id="wireframe" data-nav="Wireframe" data-nav-key="cc.wire" data-align="left">
+      <header class="step-head">
+        <h2><span data-i18n="cc.wire">Wireframe</span></h2>
+      </header>
+      <div class="full-img is-contained" data-label="Wireframe – Identity Verification" style="--ar:1.7">
+        <img src="Assets/wireframe-Cocare.png" alt="cocare mockup">
+      </div>
     </section>
   </div>
 </main>
 
-<!-- ===== Footer ===== -->
 <footer class="site-footer" id="siteFooter"></footer>
 
 <script src="lang.js"></script>
 <script src="BoardKit.js"></script>
+<script src="CoCare.js"></script>
 </body>
 </html>

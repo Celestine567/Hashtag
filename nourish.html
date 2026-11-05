@@ -63,29 +63,43 @@
 <!-- bg-bubbles -->
 <div class="page-deco" id="pageDeco" aria-hidden="true"></div>
 
-<!-- 左侧导航：由 BoardKit.js 根据带 data-nav 的区块自动生成 -->
 <nav class="side-nav" id="sideNav" aria-label="Page sections"></nav>
 
 <main>
   <!-- ===== Hero ===== -->
   <div class="project">
-    <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+        <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
       <h1 class="hero-title">
         <span class="num-bubble" data-num="03" aria-hidden="true"></span>
         <span data-i18n="nr.title">Nourish - Website Redesign</span>
       </h1>
-      <ul class="tags">
-        <li>UI/UX</li>
-        <li>Branding</li>
-      </ul>
-      <p class="intro" data-i18n="nr.intro">This redesign aims to improve the Nourish website by addressing the usability issues identified in the UI Analysis Report, while maintaining its luxurious and minimalist brand identity.</p>
-      <div class="key">
-        <h3 data-i18n="nr.key">Key Improvements</h3>
-        <ol>
-          <li data-i18n="nr.k1">Navigation: Introduce a fixed header for easier navigation.</li>
-          <li data-i18n="nr.k2">Visual Hierarchy: Establish a consistent typography and colour system.</li>
-          <li data-i18n="nr.k3">Website Architecture: Improve the content structure and interaction flow, making key features easier to find.</li>
-        </ol>
+
+      <div class="hero-body">
+        <div class="hero-text">
+          <ul class="tags">
+            <li>UI/UX</li>
+            <li>Branding</li>
+          </ul>
+          <p class="intro" data-i18n="nr.intro">This redesign aims to improve the Nourish website by addressing the usability issues identified in the UI Analysis Report, while maintaining its luxurious and minimalist brand identity.</p>
+          <div class="key">
+            <h3 data-i18n="nr.key">Key Improvements</h3>
+            <ol>
+              <li data-i18n="nr.k1">Navigation: Introduce a fixed header for easier navigation.</li>
+              <li data-i18n="nr.k2">Visual Hierarchy: Establish a consistent typography and colour system.</li>
+              <li data-i18n="nr.k3">Website Architecture: Improve the content structure and interaction flow, making key features easier to find.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- right：mockup -->
+        <div class="hero-media">
+          <div class="mock mock-laptop" data-label="MacBook mockup">
+            <img src="Assets/mockup-nourish.png" alt="Nourish website on MacBook"> 
+          </div>
+          <!--<div class="mock mock-phone" data-label="iPhone mockup">
+             <img src="images/nourish-iphone.png" alt="Nourish website on iPhone"> -->
+          </div>
+        </div>
       </div>
     </section>
   </div>

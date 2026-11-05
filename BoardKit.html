@@ -61,30 +61,43 @@
 
 <!-- bg-bubbles -->
 <div class="page-deco" id="pageDeco" aria-hidden="true"></div>
-
-<!-- ===== CHANGED: left side nav, 由 JS 根据下面带 data-nav 的区块自动生成 ===== -->
 <nav class="side-nav" id="sideNav" aria-label="Page sections"></nav>
 
 <main>
   <!-- ===== Hero ===== -->
   <div class="project">
-    <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
+        <section class="hero" id="intro" data-nav="Intro" data-nav-key="nav.intro">
       <h1 class="hero-title">
         <span class="num-bubble" data-num="02" aria-hidden="true"></span>
-        <span data-i18n="hero.title">BoardKit - A Board Game Assistant</span>
+        <span data-i18n="nr.title">BoardKit - A Board Game Assistant</span>
       </h1>
-      <ul class="tags">
-        <li>UI/UX</li>
-        <li>User Research</li>
-        <li>Product Design</li>
-      </ul>
-      <p class="intro" data-i18n="hero.intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+
+      <div class="hero-body">
+        <div class="hero-text">
+          <ul class="tags">
+            <li>UI/UX</li>
+            <li>User Research</li>
+            <li>Product Design</li>
+          </ul>
+          <p class="intro" data-i18n="nr.intro">The project aims to develop a companion application to assist board game players, focusing on facilitating more convenient and efficient gameplay with a comprehensive set of functions.</p>
+        </div>
+
+        <div class="hero-media">
+          <!-- <div class="mock mock-laptop" data-label="MacBook mockup">
+            <img src="Assets/" alt="Nourish website on MacBook"> 
+          </div>-->
+          <div class="mock mock-phone" data-label="iPhone mockup">
+            <img src="Assets/BoardKit-mockup.png" alt="boardkit website on iPhone"> 
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 
-  <!-- ===== Prototype showcase：灰色留给 video / 图片，换成 <video src=""> 或 <img src=""> 即可 ===== -->
+  <!-- ===== Prototype showcase 
   <section class="band band-grey showcase" aria-label="Prototype showcase">
-  </section>
+    <video src="Assets/BoardKit-prototype.mp4"></video>
+  </section>-->
 
   <div class="project">
 
@@ -97,43 +110,19 @@
         <img src="Assets/Frame 1.png" alt="User Research"></div>
     </section>
 
-    <section class="step" id="persona" data-nav="Persona" data-nav-key="sec.persona" data-align="left">
+    <section class="step" id="user-research" data-nav="User Research" data-nav-key="sec.research" data-align="right">
       <header class="step-head">
-        <p>Who we designed for, and what they need.</p>
-        <h2><span data-i18n="sec.persona">Persona</span></h2>
+        <p>The project timeline covers the period from the initial concept to the development stage.</p>
+        <h2><span data-i18n="sec.research">User Research</span></h2>
       </header>
-      <div class="persona-list">
-        <svg class="persona-path" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
-          <defs><marker id="pArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>
-          <path d="M20 40 C-20 200 60 320 240 340 S 640 290 820 310 S 1010 420 940 570" marker-end="url(#pArrow)"/>
-        </svg>
-        <article class="persona">
-          <div class="avatar"><!-- <img src="images/derek.jpg" alt="Derek"> --></div>
-          <div>
-            <h3>Derek</h3>
-            <p>Derek spends most of his free time playing video games. A large portion of his friends have been made solely online, but he also plays board games with family.</p>
-            <div class="persona-cols">
-              <div><h4>Pains</h4><ul><li>Setting up pieces and the board takes time</li><li>Board games are easily bore due to their slower pace</li></ul></div>
-              <div><h4>Goals</h4><ul><li>Incentives to keep playing and remain loyal</li><li>Ways to increase the pace of play</li></ul></div>
-            </div>
-          </div>
-        </article>
-        <article class="persona">
-          <div class="avatar"><!-- <img src="images/alice.jpg" alt="Alice"> --></div>
-          <div>
-            <h3>Alice</h3>
-            <p>When not busy studying, Alice can be found out grabbing dinner or drinks with friends, always eager to get out.</p>
-            <div class="persona-cols">
-              <div><h4>Pains</h4><ul><li>Lacking social connections and time required for organisation</li><li>Tendency to zone out during gameplay</li></ul></div>
-              <div><h4>Goals</h4><ul><li>Ability to organise times for games</li><li>A way to keep track of gameplay</li></ul></div>
-            </div>
-          </div>
-        </article>
-      </div>
+      <div class="ph ph-flat">
+        <img src="Assets/persona-boardkit.png" alt="User Research"></div>
     </section>
+
+
   </div>
 
-  <!-- ===== Pain point：红色波浪色块（.band 自己是 .step，里面再套一个 .project 控制宽度） ===== -->
+  <!-- ===== Pain point ===== -->
   <section class="band band-red step" id="pain-point" data-nav="Pain Point" data-nav-key="sec.pain" data-align="right">
     <div class="project">
       <header class="step-head">
@@ -143,23 +132,22 @@
       <div class="pain-grid">
         <div class="blob"><ul><li>Board Game Player Complexity and Preferences</li><li>Video Game</li><li>Casual Board Game</li><li>Social-oriented players</li></ul></div>
         <div class="blob"><ul><li>面对面游戏的设置与组织困难</li><li> “现在很难约到人一起玩。” —— 参与者 7</li></ul></div>
-        <div class="blob"><ul><li>现有辅助应用界面混乱或操作笨拙</li></ul></div>
+        <div class="blob"><ul><li>现有辅助应用界面混乱或操作笨拙</li><li>Keep conversation going</li></ul></div>
       </div>
     </div>
   </section>
 
-  <div class="project">
+  <!-- <div class="project">
     <section class="step" id="ux-architecture" data-nav="UX Architecture" data-nav-key="sec.ux" data-align="left">
       <header class="step-head">
         <p>The project timeline covers the period from the initial concept to the development stage.</p>
         <h2><span data-i18n="sec.ux">UX Architecture</span></h2>
       </header>
       <div class="ph">image</div>
-    </section>
+    </section> -->
 
     <section class="step" id="wireframe" data-nav="Wireframe" data-nav-key="sec.wire" data-align="right">
       <header class="step-head">
-        <p>The project timeline covers the period from the initial concept to the development stage.</p>
         <h2><span data-i18n="sec.wire">Wireframe</span></h2>
       </header>
       <div class="ph ph-flat">
